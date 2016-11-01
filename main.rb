@@ -13,19 +13,35 @@ require_relative 'models/style'
 
 enable :sessions
 
-get "/" do
+get '/' do
+  if session[:user_id]
+    user = User.find session[:user_id] 
+    @username = user.username
+  else
+    @username = ""
+  end
   erb :index
 end
 
-get "/signup" do
+get '/signup' do
   erb :signup
 end
 
-post "/signup" do
+post '/signup' do
   User.create username: params[:username], password: params[:password]
-  redirect to "/"
+  redirect to '/'
 end
 
-get "/login" do
+get '/login' do
   erb :login
+end
+
+post '/login' do
+  user = User.find_by username: params[:username]
+  if user && user.authenticate(params[:password])
+    session[:user_id] = user.id
+    redirect to '/'
+  else
+    erb :session_new
+  end
 end
