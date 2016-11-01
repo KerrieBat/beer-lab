@@ -19,7 +19,7 @@
 * user model
 * user_recipe, master_recipe models
 * hop, fermentable, yeast models
-* TODO: style model
+* style model
 
 ## Views
 * TODO: layout
