@@ -5,7 +5,7 @@ CREATE DATABASE brewrepo;
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   username VARCHAR(100) UNIQUE,
-  password VARCHAR(200)
+  password_digest VARCHAR(200)
 );
 
 CREATE TABLE user_recipes (

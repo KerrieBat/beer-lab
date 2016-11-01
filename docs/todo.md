@@ -45,7 +45,7 @@ GET requests:
 
 POST requests:
 * TODO: login ("/login")
-* TODO: sign up ("/signup")
+* sign up ("/signup")
 * TODO: add new recipe ("/recipes/new")
 * TODO: copy master recipe to user recipes ("/username/new")
 
