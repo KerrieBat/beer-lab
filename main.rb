@@ -10,6 +10,10 @@ require_relative 'models/hop'
 require_relative 'models/fermentable'
 require_relative 'models/yeast'
 require_relative 'models/style'
+require_relative 'models/fermentable_master_recipe'
+require_relative 'models/fermentable_user_recipe'
+require_relative 'models/hop_master_recipe'
+require_relative 'models/hop_user_recipe'
 
 enable :sessions
 
@@ -62,6 +66,7 @@ end
 get '/:username/:id' do
   user = User.find_by username: params[:username]
   @recipe = user.user_recipes.find params[:id]
-  @fermentables = @recipe.fermentables
+  @fermentables = @recipe.fermentable_user_recipes
+  @hops = @recipe.hop_user_recipes
   erb :show_user_recipe
 end

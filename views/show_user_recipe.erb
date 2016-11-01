@@ -15,5 +15,26 @@
 </div>
 
 <div class="fermentables">
+  <h2>fermentables</h2>
+  <% @fermentables.each do |fermentable| %>
+    <p><%= fermentable.fermentable.name %></p>
+    <p><%= fermentable.ppg %> PPG</p>
+    <p><%= fermentable.srm %> SRM</p>
+  <% end %>
+</div>
 
+<div class="hops">
+  <h2>hops</h2>
+  <% @hops.each do |hop| %>
+    <p><%= hop.hop.name %></p>
+    <p><%= hop.aa %>% AA</p>
+  <% end %>
+</div>
+
+<div class="yeast-mash-info">
+  <h2>Yeast & Mash Info</h2>
+  <p>Mash Temp: <%= @recipe.master_recipe.mash_temp %>deg</p>
+  <p>Mash Time: <%= @recipe.master_recipe.mash_time %>mins</p>
+  <p>Yeast: <%= @recipe.master_recipe.yeast.name %></p>
+  <p>Ferment Temp: <%= @recipe.master_recipe.ferment_temp %>deg</p>
 </div>
