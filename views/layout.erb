@@ -10,7 +10,29 @@
 </head>
 
 <body>
-  <%= yield %>
+
+  <header>
+    <img src="" alt="logo" class="logo">
+    <h1>brew repo</h1>
+    <button class="menu">menu</button>
+    <nav>
+      <p class="username">username</p>
+      <ul>
+        <li>Browse</li>
+        <li>Add New</li>
+        <li>Log Out</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    <a href="#">about</a>
+    <a href="#">help/faq</a>
+  </footer>
 
   <script src="/scripts/main.js"></script>
 </body>
