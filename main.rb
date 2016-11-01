@@ -53,3 +53,8 @@ delete '/login' do
   session[:user_id] = nil
   redirect to '/'
 end
+
+get '/recipes' do
+  @recipes = MasterRecipe.all
+  erb :all_recipes
+end

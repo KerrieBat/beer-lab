@@ -28,7 +28,7 @@
 * login page
 * user home page
 * TODO: user recipe page
-* TODO: browse all page
+* browse all page
 * TODO: master recipe page
 * TODO: new recipe page
 

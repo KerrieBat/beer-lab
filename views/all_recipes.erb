@@ -1,0 +1,14 @@
+<h2>browse all recipes</h2>
+
+<% @recipes.each do |recipe| %>
+  <div class="recipe-card">
+    <div class="name">
+      <p><%= recipe.name %></p>
+      <p><%= recipe.style.name %></p>
+    </div>
+    <img src="" alt="color">
+    <p>ABV</p>
+    <p>IBU</p>
+    <a href="#">More...</a>
+  </div>
+<% end %>
