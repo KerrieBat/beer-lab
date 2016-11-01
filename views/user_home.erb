@@ -1,10 +1,10 @@
 <h2>my recipes</h2>
 
-<% @recipes.each do %>
+<% @recipes.each do |recipe| %>
   <div class="recipe-card">
     <div class="name">
-      <p>beer name</p>
-      <p>style name</p>
+      <p><%= recipe.master_recipe.name %></p>
+      <p><%= recipe.master_recipe.style.name %></p>
     </div>
     <img src="" alt="color">
     <p>ABV</p>
