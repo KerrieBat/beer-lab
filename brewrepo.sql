@@ -39,3 +39,8 @@ CREATE TABLE yeasts (
   name VARCHAR(100),
   attenuation REAL
 );
+
+CREATE TABLE styles (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(200)
+);

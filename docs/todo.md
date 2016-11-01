@@ -10,7 +10,7 @@
 * users table
 * user_recipes, master_recipes tables
 * hops, fermentables, yeasts tables
-* TODO: styles table
+* styles table
 * TODO: join tables
 * TODO: dummy data
 
