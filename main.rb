@@ -44,6 +44,11 @@ post '/login' do
     session[:user_id] = user.id
     redirect to '/'
   else
-    erb :session_new
+    erb :login
   end
+end
+
+delete '/login' do
+  session[:user_id] = nil
+  redirect to '/'
 end

@@ -20,7 +20,12 @@
       <ul>
         <li>Browse</li>
         <li>Add New</li>
-        <li>Log Out</li>
+        <li>
+          <form action="/login" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button>Log Out</button>
+          </form>
+        </li>
       </ul>
     </nav>
   </header>
