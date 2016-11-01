@@ -6,7 +6,7 @@
 * Boilerplate for main files
 
 ## Database setup
-* TODO: setup dev database
+* setup dev database
 * TODO: users table
 * TODO: user_recipes, master_recipes tables
 * TODO: hops, fermentables, yeasts tables
