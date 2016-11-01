@@ -15,7 +15,7 @@
 * TODO: dummy data
 
 ## Models
-* TODO: db_config
+* db_config
 * TODO: user model
 * TODO: user_recipe, master_recipe models
 * TODO: hop, fermentable, yeast models
