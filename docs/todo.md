@@ -7,7 +7,7 @@
 
 ## Database setup
 * setup dev database
-* TODO: users table
+* users table
 * TODO: user_recipes, master_recipes tables
 * TODO: hops, fermentables, yeasts tables
 * TODO: styles table
