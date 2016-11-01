@@ -16,7 +16,7 @@
 
 ## Models
 * db_config
-* TODO: user model
+* user model
 * TODO: user_recipe, master_recipe models
 * TODO: hop, fermentable, yeast models
 * TODO: style model
@@ -25,6 +25,7 @@
 * TODO: layout
 * TODO: index (when not logged in)
 * TODO: sign up page
+* TODO: login page
 * TODO: user home page
 * TODO: user recipe page
 * TODO: browse all page
@@ -35,12 +36,14 @@
 GET requests:
 * TODO: homepage ("/")
 * TODO: sign up page ("/sigunp")
+* TODO: login page ("/session/new")
 * TODO: user recipe page ("/username/user_recipe_id")
 * TODO: browse all page ("/recipes")
 * TODO: master recipe page ("/recipes/master_recipe_id")
 * TODO: new recipe page ("/recipes/new")
 
 POST requests:
+* TODO: login ("/session")
 * TODO: add new recipe ("/recipes/new")
 * TODO: copy master recipe to user recipes ("/username/new")
 
@@ -48,6 +51,7 @@ PATCH requests:
 * TODO: update user recipe ("/username/user_recipe_id")
 
 DELETE requests:
+* TODO: logout ("/session")
 * TODO: delete user recipe ("/username/user_recipe_id")
 
 ## Styling
