@@ -1,1 +1,14 @@
-<h1>user home</h1>
+<h2>my recipes</h2>
+
+<% @recipes.each do %>
+  <div class="recipe-card">
+    <div class="name">
+      <p>beer name</p>
+      <p>style name</p>
+    </div>
+    <img src="" alt="color">
+    <p>ABV</p>
+    <p>IBU</p>
+    <a href="#">More...</a>
+  </div>
+<% end %>

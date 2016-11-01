@@ -17,10 +17,12 @@ get '/' do
   if session[:user_id]
     user = User.find session[:user_id] 
     @username = user.username
+    @recipes = user.user_recipes
+    erb :user_home
   else
-    @username = ""
+    @username = ''
+    erb :index
   end
-  erb :index
 end
 
 get '/signup' do

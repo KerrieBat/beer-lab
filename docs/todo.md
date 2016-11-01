@@ -26,7 +26,7 @@
 * index (when not logged in)
 * sign up page
 * login page
-* TODO: user home page
+* user home page
 * TODO: user recipe page
 * TODO: browse all page
 * TODO: master recipe page
@@ -35,7 +35,7 @@
 ## Routing
 GET requests:
 * homepage ("/")
-* TODO: user home page ("/" while logged in)
+* user home page ("/" while logged in)
 * sign up page ("/signup")
 * login page ("/login")
 * TODO: user recipe page ("/username/user_recipe_id")
@@ -53,7 +53,7 @@ PATCH requests:
 * TODO: update user recipe ("/username/user_recipe_id")
 
 DELETE requests:
-* TODO: logout ("/session")
+* logout ("/login")
 * TODO: delete user recipe ("/username/user_recipe_id")
 
 ## Styling
