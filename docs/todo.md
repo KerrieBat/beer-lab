@@ -18,7 +18,7 @@
 * db_config
 * user model
 * user_recipe, master_recipe models
-* TODO: hop, fermentable, yeast models
+* hop, fermentable, yeast models
 * TODO: style model
 
 ## Views
