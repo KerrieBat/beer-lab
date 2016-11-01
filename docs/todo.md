@@ -24,7 +24,7 @@
 ## Views
 * layout
 * index (when not logged in)
-* TODO: sign up page
+* sign up page
 * TODO: login page
 * TODO: user home page
 * TODO: user recipe page
@@ -34,8 +34,9 @@
 
 ## Routing
 GET requests:
-* TODO: homepage ("/")
-* TODO: sign up page ("/sigunp")
+* homepage ("/")
+* TODO: user home page ("/" while logged in)
+* sign up page ("/signup")
 * TODO: login page ("/session/new")
 * TODO: user recipe page ("/username/user_recipe_id")
 * TODO: browse all page ("/recipes")
@@ -44,6 +45,7 @@ GET requests:
 
 POST requests:
 * TODO: login ("/session")
+* TODO: sign up ("/signup")
 * TODO: add new recipe ("/recipes/new")
 * TODO: copy master recipe to user recipes ("/username/new")
 
