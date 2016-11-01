@@ -1,5 +1,7 @@
 CREATE DATABASE brewrepo;
 
+# MAIN TABLES:
+
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   username VARCHAR(100) UNIQUE,
@@ -43,4 +45,36 @@ CREATE TABLE yeasts (
 CREATE TABLE styles (
   id SERIAL PRIMARY KEY,
   name VARCHAR(200)
+);
+
+# JOIN TABLES:
+
+CREATE TABLE hops_user_recipes (
+  id SERIAL PRIMARY KEY,
+  hop_id INT,
+  user_recipe_id INT,
+  aa REAL
+);
+
+CREATE TABLE hops_master_recipes (
+  id SERIAL PRIMARY KEY,
+  hop_id INT,
+  master_recipe_id INT,
+  add_time INT,
+  ibu INT
+);
+
+CREATE TABLE fermentables_user_recipes (
+  id SERIAL PRIMARY KEY,
+  fermentable_id INT,
+  user_recipe_id INT,
+  ppg INT,
+  srm INT
+);
+
+CREATE TABLE fermentables_master_recipes (
+  id SERIAL PRIMARY KEY,
+  fermentable_id INT,
+  master_recipe_id INT,
+  target_extraction REAL
 );

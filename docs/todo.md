@@ -11,7 +11,7 @@
 * user_recipes, master_recipes tables
 * hops, fermentables, yeasts tables
 * styles table
-* TODO: join tables
+* join tables
 * TODO: dummy data
 
 ## Models
