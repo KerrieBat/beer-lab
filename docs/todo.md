@@ -12,7 +12,7 @@
 * hops, fermentables, yeasts tables
 * styles table
 * join tables
-* TODO: dummy data
+* example data
 
 ## Models
 * db_config

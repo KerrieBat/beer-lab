@@ -39,7 +39,7 @@ CREATE TABLE fermentables (
 CREATE TABLE yeasts (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100),
-  attenuation REAL
+  attenuation INT
 );
 
 CREATE TABLE styles (
@@ -76,5 +76,37 @@ CREATE TABLE fermentables_master_recipes (
   id SERIAL PRIMARY KEY,
   fermentable_id INT,
   master_recipe_id INT,
-  target_extraction REAL
+  target_ppg INT
 );
+
+# EXAMPLE DATA:
+
+INSERT INTO master_recipes (name, mash_temp, mash_time, ferment_temp, style_id, user_id, yeast_id)
+VALUES ('Example Pale Ale', 67, 60, 19, 1, 1, 1), ('Example IPA', 64, 60, 17, 2, 1, 2);
+
+INSERT INTO user_recipes (volume, user_id, master_recipe_id)
+VALUES (21, 1, 1), (30, 1, 2);
+
+INSERT INTO styles (name)
+VALUES ('Pale Ale'), ('IPA');
+
+INSERT INTO yeasts (name, attenuation)
+VALUES ('SF-05 American Ale', 80), ('Wyeast 1272', 76);
+
+INSERT INTO hops (name)
+VALUES ('East Kent Goldings'), ('Citra'), ('Galaxy');
+
+INSERT INTO fermentables (name)
+VALUES ('Pale Malt'), ('Light Crystal'), ('Wheat');
+
+INSERT INTO fermentables_master_recipes (fermentable_id, master_recipe_id, target_ppg)
+VALUES (1, 1, 37), (3, 1, 25), (1, 2, 40), (2, 2, 14);
+
+INSERT INTO fermentables_user_recipes (fermentable_id, user_recipe_id, ppg, srm)
+VALUES (1, 1, 35, 12), (3, 1, 30, 7), (1, 2, 35, 12), (2, 2, 32, 19);
+
+INSERT INTO hops_master_recipes (hop_id, master_recipe_id, add_time, ibu)
+VALUES (1, 1, 60, 19), (2, 1, 30, 7), (1, 2, 60, 36), (3, 2, 10, 11);
+
+INSERT INTO hops_user_recipes (hop_id, user_recipe_id, aa)
+VALUES (1, 1, 8.4), (2, 1, 13.2), (1, 2, 10.6), (3, 2, 7.5);
