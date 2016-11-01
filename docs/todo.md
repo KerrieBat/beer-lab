@@ -8,10 +8,11 @@
 ## Database setup
 * setup dev database
 * users table
-* TODO: user_recipes, master_recipes tables
+* user_recipes, master_recipes tables
 * TODO: hops, fermentables, yeasts tables
 * TODO: styles table
 * TODO: join tables
+* TODO: dummy data
 
 ## Models
 * TODO: db_config
