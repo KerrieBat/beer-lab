@@ -22,8 +22,8 @@
 * style model
 
 ## Views
-* TODO: layout
-* TODO: index (when not logged in)
+* layout
+* index (when not logged in)
 * TODO: sign up page
 * TODO: login page
 * TODO: user home page
