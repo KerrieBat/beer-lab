@@ -8,5 +8,6 @@ require_relative 'models/hop'
 require_relative 'models/fermentable'
 require_relative 'models/yeast'
 require_relative 'models/style'
+require_relative 'models/fermentable_user_recipe'
 
 binding.pry

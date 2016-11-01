@@ -20,6 +20,7 @@
 * user_recipe, master_recipe models
 * hop, fermentable, yeast models
 * style model
+* join table models
 
 ## Views
 * layout
@@ -27,7 +28,7 @@
 * sign up page
 * login page
 * user home page
-* TODO: user recipe page
+* user recipe page
 * browse all page
 * TODO: master recipe page
 * TODO: new recipe page
@@ -38,8 +39,8 @@ GET requests:
 * user home page ("/" while logged in)
 * sign up page ("/signup")
 * login page ("/login")
-* TODO: user recipe page ("/username/user_recipe_id")
-* TODO: browse all page ("/recipes")
+* user recipe page ("/username/user_recipe_id")
+* browse all page ("/recipes")
 * TODO: master recipe page ("/recipes/master_recipe_id")
 * TODO: new recipe page ("/recipes/new")
 

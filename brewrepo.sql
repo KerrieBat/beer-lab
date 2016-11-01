@@ -49,14 +49,14 @@ CREATE TABLE styles (
 
 # JOIN TABLES:
 
-CREATE TABLE hops_user_recipes (
+CREATE TABLE hop_user_recipes (
   id SERIAL PRIMARY KEY,
   hop_id INT,
   user_recipe_id INT,
   aa REAL
 );
 
-CREATE TABLE hops_master_recipes (
+CREATE TABLE hop_master_recipes (
   id SERIAL PRIMARY KEY,
   hop_id INT,
   master_recipe_id INT,
@@ -64,7 +64,7 @@ CREATE TABLE hops_master_recipes (
   ibu INT
 );
 
-CREATE TABLE fermentables_user_recipes (
+CREATE TABLE fermentable_user_recipes (
   id SERIAL PRIMARY KEY,
   fermentable_id INT,
   user_recipe_id INT,
@@ -72,7 +72,7 @@ CREATE TABLE fermentables_user_recipes (
   srm INT
 );
 
-CREATE TABLE fermentables_master_recipes (
+CREATE TABLE fermentable_master_recipes (
   id SERIAL PRIMARY KEY,
   fermentable_id INT,
   master_recipe_id INT,
@@ -99,14 +99,14 @@ VALUES ('East Kent Goldings'), ('Citra'), ('Galaxy');
 INSERT INTO fermentables (name)
 VALUES ('Pale Malt'), ('Light Crystal'), ('Wheat');
 
-INSERT INTO fermentables_master_recipes (fermentable_id, master_recipe_id, target_ppg)
+INSERT INTO fermentable_master_recipes (fermentable_id, master_recipe_id, target_ppg)
 VALUES (1, 1, 37), (3, 1, 25), (1, 2, 40), (2, 2, 14);
 
-INSERT INTO fermentables_user_recipes (fermentable_id, user_recipe_id, ppg, srm)
+INSERT INTO fermentable_user_recipes (fermentable_id, user_recipe_id, ppg, srm)
 VALUES (1, 1, 35, 12), (3, 1, 30, 7), (1, 2, 35, 12), (2, 2, 32, 19);
 
-INSERT INTO hops_master_recipes (hop_id, master_recipe_id, add_time, ibu)
+INSERT INTO hop_master_recipes (hop_id, master_recipe_id, add_time, ibu)
 VALUES (1, 1, 60, 19), (2, 1, 30, 7), (1, 2, 60, 36), (3, 2, 10, 11);
 
-INSERT INTO hops_user_recipes (hop_id, user_recipe_id, aa)
+INSERT INTO hop_user_recipes (hop_id, user_recipe_id, aa)
 VALUES (1, 1, 8.4), (2, 1, 13.2), (1, 2, 10.6), (3, 2, 7.5);
