@@ -23,3 +23,19 @@ CREATE TABLE master_recipes (
   user_id INT,
   yeast_id INT
 );
+
+CREATE TABLE hops (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100)
+);
+
+CREATE TABLE fermentables (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100)
+);
+
+CREATE TABLE yeasts (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100),
+  attenuation REAL
+);

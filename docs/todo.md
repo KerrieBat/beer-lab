@@ -9,7 +9,7 @@
 * setup dev database
 * users table
 * user_recipes, master_recipes tables
-* TODO: hops, fermentables, yeasts tables
+* hops, fermentables, yeasts tables
 * TODO: styles table
 * TODO: join tables
 * TODO: dummy data
