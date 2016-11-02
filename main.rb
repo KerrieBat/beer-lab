@@ -90,6 +90,10 @@ get '/recipes/:id' do
   @recipe = MasterRecipe.find params[:id]
   @fermentables = @recipe.fermentable_master_recipes
   @hops = @recipe.hop_master_recipes
+  @og = @fermentables.sum('target_ppg').to_f / 1000 + 1
+  @fg = ((@og * 1000 - 1000) * (1 - (@recipe.yeast.attenuation.to_f / 100)) + 1000) / 1000
+  @abv = (@og - @fg) * 131.25
+  @ibu = @hops.sum('ibu')
   erb :show_master_recipe
 end
 
