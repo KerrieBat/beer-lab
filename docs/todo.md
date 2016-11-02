@@ -64,6 +64,23 @@ DELETE requests:
 # Further Refinements
 * create helper functions for user id and login check
 * alter menu options depending on user login status
+* TODO: brewing math for master recipes
+* TODO: brewing math for user recipes
+* TODO: user can add extra fermentable and hop inputs to new recipe form
+* TODO: ensure user is logged in when performing CRUD operations
+* TODO: input field validation on login and signup forms
+* TODO: input field validation on new recipe form
+* TODO: input validation on edit form
+* TODO: autocomplete form fields
 
 # Styling
-
+* TODO: structure overall layout template
+* TODO: make menu slide in when selected
+* TODO: style recipe cards
+* TODO: style user homepage and browse all page
+* TODO: style full user recipe
+* TODO: style full master recipe
+* TODO: style login and signup pages
+* TODO: style new recipe page
+* TODO: style edit recipe page
+* TODO: media queries for larger screens

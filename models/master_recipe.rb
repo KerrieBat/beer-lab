@@ -20,9 +20,19 @@ class MasterRecipe < ActiveRecord::Base
     yeast.update(attenuation: params[:attenuation])
 
     # TODO:, math and loops here
+    target_ppg = ((params[:f_weight1].to_i * 0.00220462) * params[:ppg1].to_i * 0.75) / (params[:volume].to_i * 0.264172)
     self.fermentables << Fermentable.find_or_create_by(name: params[:fermentable1])
-    self.fermentable_master_recipes[0].update(target_ppg: 35)
+    self.fermentable_master_recipes[0].update(target_ppg: target_ppg)
+
+    total_gravity = 0
+    self.fermentable_master_recipes.each { |o| total_gravity += o.target_ppg }
+    total_gravity = total_gravity.to_f / 1000
+    
+    f1 = 1.65 * (0.000125 ** (0.785 * total_gravity))
+    f2 = (1 - (2.718281828459045235 ** (-0.04 * params[:time1].to_i))) / 4.15
+    ibu = ((params[:aa1].to_f / 100) * params[:h_weight1].to_i * (f1 * f2 * 1.1) * 100) / params[:volume].to_i
+    
     self.hops << Hop.find_or_create_by(name: params[:hop1])
-    self.hop_master_recipes[0].update(add_time: params[:time1], ibu: 20)
+    self.hop_master_recipes[0].update(add_time: params[:time1], ibu: ibu)
   end
 end
