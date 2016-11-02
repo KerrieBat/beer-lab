@@ -63,6 +63,14 @@ get '/recipes' do
   erb :all_recipes
 end
 
+get '/recipes/new' do
+  erb :new_recipe
+end
+
+post '/recipes/new' do
+  # binding.pry
+end
+
 get '/recipes/:id' do
   @recipe = MasterRecipe.find params[:id]
   @fermentables = @recipe.fermentable_master_recipes

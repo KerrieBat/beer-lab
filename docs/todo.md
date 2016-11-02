@@ -1,11 +1,13 @@
-## Planning
+# Core Functionality
+
+### Planning
 * Wireframes
 * Database relationship chart
 * Write readme
 * Project repo (local and github)
 * Boilerplate for main files
 
-## Database setup
+### Database setup
 * setup dev database
 * users table
 * user_recipes, master_recipes tables
@@ -14,7 +16,7 @@
 * join tables
 * example data
 
-## Models
+### Models
 * db_config
 * user model
 * user_recipe, master_recipe models
@@ -22,7 +24,7 @@
 * style model
 * join table models
 
-## Views
+### Views
 * layout
 * index (when not logged in)
 * sign up page
@@ -31,9 +33,10 @@
 * user recipe page
 * browse all page
 * master recipe page
-* TODO: new recipe page
+* new recipe page
+* TODO: edit user recipe page
 
-## Routing
+### Routing
 GET requests:
 * homepage ("/")
 * user home page ("/" while logged in)
@@ -42,7 +45,8 @@ GET requests:
 * user recipe page ("/username/user_recipe_id")
 * browse all page ("/recipes")
 * master recipe page ("/recipes/master_recipe_id")
-* TODO: new recipe page ("/recipes/new")
+* new recipe page ("/recipes/new")
+* TODO: edit user recipe ("/username/edit/user_recipe_id")
 
 POST requests:
 * login ("/login")
@@ -57,5 +61,7 @@ DELETE requests:
 * logout ("/login")
 * TODO: delete user recipe ("/username/user_recipe_id")
 
-## Styling
+# Further Refinements
+
+### Styling
 * 
