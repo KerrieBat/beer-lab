@@ -10,10 +10,10 @@ require_relative 'models/hop'
 require_relative 'models/fermentable'
 require_relative 'models/yeast'
 require_relative 'models/style'
-require_relative 'models/fermentable_master_recipe'
-require_relative 'models/fermentable_user_recipe'
-require_relative 'models/hop_master_recipe'
-require_relative 'models/hop_user_recipe'
+require_relative 'models/master_fermentable'
+require_relative 'models/user_fermentable'
+require_relative 'models/master_hop'
+require_relative 'models/user_hop'
 
 enable :sessions
 
@@ -28,36 +28,36 @@ helpers do
 
   def get_stats recipe
     stats = {}
-    stats['og'] = recipe.fermentable_master_recipes.sum('target_ppg').to_f / 1000 + 1
+    stats['og'] = recipe.master_fermentables.sum('target_ppg').to_f / 1000 + 1
     stats['fg'] = ((stats['og'] * 1000 - 1000) * (1 - (recipe.yeast.attenuation.to_f / 100)) + 1000) / 1000
     stats['abv'] = (stats['og'] - stats['fg']) * 131.25
-    stats['ibu'] = recipe.hop_master_recipes.sum('ibu')
+    stats['ibu'] = recipe.master_hops.sum('ibu')
     stats
   end
 
   def get_srm recipe
     srm = 0
     recipe.fermentables.each do |fermentable|
-      srm += fermentable.fermentable_user_recipes.average('srm')
+      srm += fermentable.user_fermentables.average('srm')
     end
   end
 
   def get_fermentable_weight fermentable, recipe, index
-    target = recipe.master_recipe.fermentable_master_recipes[index].target_ppg
+    target = recipe.master_recipe.master_fermentables[index].target_ppg
     diff = target / fermentable.ppg.to_f
     vol_gals = recipe.volume * 0.264172
     weight = vol_gals * diff * 453.592
   end
 
   def get_hop_weight hop, recipe, index
-    target = recipe.master_recipe.hop_master_recipes[index].ibu
+    target = recipe.master_recipe.master_hops[index].ibu
 
-    total_gravity = recipe.master_recipe.fermentable_master_recipes.sum('target_ppg')
+    total_gravity = recipe.master_recipe.master_fermentables.sum('target_ppg')
     total_gravity = total_gravity.to_f / 1000
     f1 = 1.65 * (0.000125 ** (0.785 * total_gravity))
 
-    time = recipe.master_recipe.hop_master_recipes[index].add_time
-    ibu = recipe.master_recipe.hop_master_recipes[index].ibu
+    time = recipe.master_recipe.master_hops[index].add_time
+    ibu = recipe.master_recipe.master_hops[index].ibu
     f2 = (1 - (2.718281828459045235 ** (-0.04 * time))) / 4.15
     weight = (ibu * recipe.volume) / (10 * hop.aa * (f1 * f2 * 1.1))
   end
@@ -124,8 +124,8 @@ end
 
 get '/recipes/:id' do
   @recipe = MasterRecipe.find params[:id]
-  @fermentables = @recipe.fermentable_master_recipes
-  @hops = @recipe.hop_master_recipes
+  @fermentables = @recipe.master_fermentables
+  @hops = @recipe.master_hops
   @stats = get_stats @recipe
   erb :show_master_recipe
 end
@@ -148,8 +148,8 @@ end
 
 get '/:username/edit/:id' do
   @recipe = current_user.user_recipes.find params[:id]
-  @fermentables = @recipe.fermentable_user_recipes
-  @hops = @recipe.hop_user_recipes
+  @fermentables = @recipe.user_fermentables
+  @hops = @recipe.user_hops
   erb :edit_recipe
 end
 
@@ -166,8 +166,8 @@ end
 
 get '/:username/:id' do
   @recipe = current_user.user_recipes.find params[:id]
-  @fermentables = @recipe.fermentable_user_recipes
-  @hops = @recipe.hop_user_recipes
+  @fermentables = @recipe.user_fermentables
+  @hops = @recipe.user_hops
   @stats = get_stats @recipe.master_recipe
   erb :show_user_recipe
 end

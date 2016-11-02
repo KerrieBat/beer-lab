@@ -18,6 +18,7 @@ CREATE TABLE user_recipes (
 CREATE TABLE master_recipes (
   id SERIAL PRIMARY KEY,
   name VARCHAR(200),
+  srm INT,
   mash_temp INT,
   mash_time INT,
   ferment_temp INT,
@@ -49,14 +50,14 @@ CREATE TABLE styles (
 
 # JOIN TABLES:
 
-CREATE TABLE hop_user_recipes (
+CREATE TABLE user_hops (
   id SERIAL PRIMARY KEY,
   hop_id INT,
   user_recipe_id INT,
   aa REAL
 );
 
-CREATE TABLE hop_master_recipes (
+CREATE TABLE master_hops (
   id SERIAL PRIMARY KEY,
   hop_id INT,
   master_recipe_id INT,
@@ -64,15 +65,14 @@ CREATE TABLE hop_master_recipes (
   ibu INT
 );
 
-CREATE TABLE fermentable_user_recipes (
+CREATE TABLE user_fermentables (
   id SERIAL PRIMARY KEY,
   fermentable_id INT,
   user_recipe_id INT,
-  ppg INT,
-  srm INT
+  ppg INT
 );
 
-CREATE TABLE fermentable_master_recipes (
+CREATE TABLE master_fermentables (
   id SERIAL PRIMARY KEY,
   fermentable_id INT,
   master_recipe_id INT,
@@ -81,8 +81,8 @@ CREATE TABLE fermentable_master_recipes (
 
 # EXAMPLE DATA:
 
-INSERT INTO master_recipes (name, mash_temp, mash_time, ferment_temp, style_id, user_id, yeast_id)
-VALUES ('Example Pale Ale', 67, 60, 19, 1, 1, 1), ('Example IPA', 64, 60, 17, 2, 1, 2);
+INSERT INTO master_recipes (name, srm, mash_temp, mash_time, ferment_temp, style_id, user_id, yeast_id)
+VALUES ('Example Pale Ale', 9, 67, 60, 19, 1, 1, 1), ('Example IPA', 21, 64, 60, 17, 2, 1, 2);
 
 INSERT INTO user_recipes (volume, user_id, master_recipe_id)
 VALUES (21, 1, 1), (30, 1, 2);
@@ -99,14 +99,14 @@ VALUES ('East Kent Goldings'), ('Citra'), ('Galaxy');
 INSERT INTO fermentables (name)
 VALUES ('Pale Malt'), ('Light Crystal'), ('Wheat');
 
-INSERT INTO fermentable_master_recipes (fermentable_id, master_recipe_id, target_ppg)
+INSERT INTO master_fermentables (fermentable_id, master_recipe_id, target_ppg)
 VALUES (1, 1, 37), (3, 1, 25), (1, 2, 40), (2, 2, 14);
 
-INSERT INTO fermentable_user_recipes (fermentable_id, user_recipe_id, ppg, srm)
-VALUES (1, 1, 35, 12), (3, 1, 30, 7), (1, 2, 35, 12), (2, 2, 32, 19);
+INSERT INTO user_fermentables (fermentable_id, user_recipe_id, ppg)
+VALUES (1, 1, 35), (3, 1, 30), (1, 2, 35), (2, 2, 32);
 
-INSERT INTO hop_master_recipes (hop_id, master_recipe_id, add_time, ibu)
+INSERT INTO master_hops (hop_id, master_recipe_id, add_time, ibu)
 VALUES (1, 1, 60, 19), (2, 1, 30, 7), (1, 2, 60, 36), (3, 2, 10, 11);
 
-INSERT INTO hop_user_recipes (hop_id, user_recipe_id, aa)
+INSERT INTO user_hops (hop_id, user_recipe_id, aa)
 VALUES (1, 1, 8.4), (2, 1, 13.2), (1, 2, 10.6), (3, 2, 7.5);

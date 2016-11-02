@@ -21,7 +21,6 @@
   <% @fermentables.each_with_index do |fermentable, index| %>
     <p><%= fermentable.fermentable.name %></p>
     <p><%= fermentable.ppg %> PPG</p>
-    <p><%= fermentable.srm %> SRM</p>
     <p><%= get_fermentable_weight(fermentable, @recipe, index).to_i %> grams</p>
   <% end %>
 </div>

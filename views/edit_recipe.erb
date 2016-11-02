@@ -19,7 +19,6 @@
     <% @fermentables.each do |fermentable| %>
       <p><%= fermentable.fermentable.name %></p>
       <p>PPG </p><input type="text" name="ppg<%= counter %>" value="<%= fermentable.ppg %> ">
-      <p>SRM </p><input type="text" name="srm<%= counter %>" value="<%= fermentable.srm %> ">
       <% counter += 1 %>
     <% end %>
   </div>
