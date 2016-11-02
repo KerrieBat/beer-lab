@@ -1,14 +1,15 @@
 <h2>my recipes</h2>
 
 <% @recipes.each do |recipe| %>
+  <% stats = get_stats recipe.master_recipe %>
   <div class="recipe-card">
     <div class="name">
       <p><%= recipe.master_recipe.name %></p>
       <p><%= recipe.master_recipe.style.name %></p>
     </div>
     <img src="" alt="color">
-    <p>ABV: </p>
-    <p>IBU</p>
+    <p>ABV: <%= stats['abv'].round(1) %>%</p>
+    <p>IBU <%= stats['ibu'] %></p>
     <a href="/<%= recipe.user.username %>/<%= recipe.id %>">More...</a>
   </div>
 <% end %>
