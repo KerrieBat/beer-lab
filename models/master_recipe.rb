@@ -19,12 +19,15 @@ class MasterRecipe < ActiveRecord::Base
     self.yeast_id = yeast.id
     yeast.update(attenuation: params[:attenuation])
 
-    # TODO: calc SRM here
+    srm = 0
+
     # TODO: loops for multiple ingredients
     target_ppg = ((params[:f_weight1].to_i * 0.00220462) * params[:ppg1].to_i * 0.75) / (params[:volume].to_i * 0.264172)
+    srm += (params[:lovi1].to_f * (params[:f_weight1].to_i * 0.00220462)) / (params[:volume].to_i * 0.264172)
     self.fermentables << Fermentable.find_or_create_by(name: params[:fermentable1])
     self.master_fermentables[0].update(target_ppg: target_ppg)
 
+    self.update(srm: srm.to_i)
     total_gravity = self.master_fermentables.sum('target_ppg')
     total_gravity = total_gravity.to_f / 1000
     f1 = 1.65 * (0.000125 ** (0.785 * total_gravity))

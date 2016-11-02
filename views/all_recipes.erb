@@ -7,7 +7,7 @@
       <p><%= recipe.name %></p>
       <p><%= recipe.style.name %></p>
     </div>
-    <img src="" alt="color">
+    <p>SRM: <%= recipe.srm %></p>
     <p>ABV: <%= stats['abv'].round(1) %>%</p>
     <p>IBU <%= stats['ibu'] %></p>
     <a href="/recipes/<%= recipe.id %>">More...</a>
