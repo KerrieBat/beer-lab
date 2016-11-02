@@ -6,28 +6,32 @@
   <img src="" alt="color">
 </div>
 
+<p>Brew Volume: <%= @recipe.volume %>L</p>
+
 <div class="stats">
   <h2>stats</h2>
-  <p>ABV</p>
-  <p>IBU</p>
-  <p>OG</p>
-  <p>FG</p>
+  <p>ABV: <%= @stats['abv'].round(1) %>%</p>
+  <p>IBU: <%= @stats['ibu'] %></p>
+  <p>OG: <%= @stats['og'].round(3) %></p>
+  <p>FG: <%= @stats['fg'].round(3) %></p>
 </div>
 
 <div class="fermentables">
   <h2>fermentables</h2>
-  <% @fermentables.each do |fermentable| %>
+  <% @fermentables.each_with_index do |fermentable, index| %>
     <p><%= fermentable.fermentable.name %></p>
     <p><%= fermentable.ppg %> PPG</p>
     <p><%= fermentable.srm %> SRM</p>
+    <p><%= get_fermentable_weight(fermentable, @recipe, index).to_i %> grams</p>
   <% end %>
 </div>
 
 <div class="hops">
   <h2>hops</h2>
-  <% @hops.each do |hop| %>
+  <% @hops.each_with_index do |hop, index| %>
     <p><%= hop.hop.name %></p>
     <p><%= hop.aa %>% AA</p>
+    <p><%= get_hop_weight(hop, @recipe, index).to_i %> grams</p>
   <% end %>
 </div>
 

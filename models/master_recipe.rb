@@ -24,8 +24,7 @@ class MasterRecipe < ActiveRecord::Base
     self.fermentables << Fermentable.find_or_create_by(name: params[:fermentable1])
     self.fermentable_master_recipes[0].update(target_ppg: target_ppg)
 
-    total_gravity = 0
-    self.fermentable_master_recipes.each { |o| total_gravity += o.target_ppg }
+    total_gravity = self.fermentable_master_recipes.sum('target_ppg')
     total_gravity = total_gravity.to_f / 1000
     f1 = 1.65 * (0.000125 ** (0.785 * total_gravity))
 

@@ -34,6 +34,26 @@ helpers do
     stats['ibu'] = recipe.hop_master_recipes.sum('ibu')
     stats
   end
+
+  def get_fermentable_weight fermentable, recipe, index
+    target = recipe.master_recipe.fermentable_master_recipes[index].target_ppg
+    diff = target / fermentable.ppg.to_f
+    vol_gals = recipe.volume * 0.264172
+    weight = vol_gals * diff * 453.592
+  end
+
+  def get_hop_weight hop, recipe, index
+    target = recipe.master_recipe.hop_master_recipes[index].ibu
+
+    total_gravity = recipe.master_recipe.fermentable_master_recipes.sum('target_ppg')
+    total_gravity = total_gravity.to_f / 1000
+    f1 = 1.65 * (0.000125 ** (0.785 * total_gravity))
+
+    time = recipe.master_recipe.hop_master_recipes[index].add_time
+    ibu = recipe.master_recipe.hop_master_recipes[index].ibu
+    f2 = (1 - (2.718281828459045235 ** (-0.04 * time))) / 4.15
+    weight = (ibu * recipe.volume) / (10 * hop.aa * (f1 * f2 * 1.1))
+  end
 end
 
 get '/' do
@@ -141,5 +161,6 @@ get '/:username/:id' do
   @recipe = current_user.user_recipes.find params[:id]
   @fermentables = @recipe.fermentable_user_recipes
   @hops = @recipe.hop_user_recipes
+  @stats = get_stats @recipe.master_recipe
   erb :show_user_recipe
 end

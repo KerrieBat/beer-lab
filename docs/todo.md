@@ -65,7 +65,7 @@ DELETE requests:
 * create helper functions for user id and login check
 * alter menu options depending on user login status
 * brewing math for master recipes
-* TODO: brewing math for user recipes
+* brewing math for user recipes
 * TODO: math for SRM
 * TODO: user can add extra fermentable and hop inputs to new recipe form
 * TODO: ensure user is logged in when performing CRUD operations

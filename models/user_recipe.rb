@@ -21,17 +21,13 @@ class UserRecipe < ActiveRecord::Base
   def update_info params
     self.update volume: params[:volume]
 
-    count = 0
-    self.fermentable_user_recipes.each do |fermentable|
-      fermentable.update ppg: params["ppg#{ count }"]
-      fermentable.update srm: params["srm#{ count }"]
-      count += 1
+    self.fermentable_user_recipes.each_with_index do |fermentable, index|
+      fermentable.update ppg: params["ppg#{ index }"]
+      fermentable.update srm: params["srm#{ index }"]
     end
 
-    count = 0
-    self.hop_user_recipes.each do |hop|
-      hop.update aa: params["aa#{ count }"]
-      count += 1
+    self.hop_user_recipes.each_with_index do |hop, index|
+      hop.update aa: params["aa#{ index }"]
     end
   end
 end
