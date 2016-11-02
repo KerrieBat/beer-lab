@@ -9,9 +9,9 @@
 <h2>Edit Recipe Details</h2>
 
 <form action="/<%= @recipe.user.username %>/<%= @recipe.id %>" method="post">
-  <input type="hidden" name"_method" value="patch">
+  <input type="hidden" name="_method" value="patch">
 
-  <label>volume</style><input type="text" name="volume">
+  <label>volume</label><input type="text" name="volume" value="<%= @recipe.volume %>">
   
   <div class="fermentables">
     <h2>fermentables</h2>

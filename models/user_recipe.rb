@@ -17,4 +17,21 @@ class UserRecipe < ActiveRecord::Base
     self.hops << Hop.find_by(name: params[:hop1])
     self.hop_user_recipes[0].update(aa: params[:aa1])
   end
+
+  def update_info params
+    self.update volume: params[:volume]
+
+    count = 0
+    self.fermentable_user_recipes.each do |fermentable|
+      fermentable.update ppg: params["ppg#{ count }"]
+      fermentable.update srm: params["srm#{ count }"]
+      count += 1
+    end
+
+    count = 0
+    self.hop_user_recipes.each do |hop|
+      hop.update aa: params["aa#{ count }"]
+      count += 1
+    end
+  end
 end

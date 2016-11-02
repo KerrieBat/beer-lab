@@ -55,7 +55,7 @@ POST requests:
 * TODO: copy master recipe to user recipes ("/username/new")
 
 PATCH requests:
-* TODO: update user recipe ("/username/user_recipe_id")
+* update user recipe ("/username/user_recipe_id")
 
 DELETE requests:
 * logout ("/login")

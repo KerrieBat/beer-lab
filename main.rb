@@ -100,9 +100,14 @@ get '/:username/edit/:id' do
   erb :edit_recipe
 end
 
+patch '/:username/:id' do
+  recipe = current_user.user_recipes.find params[:id]
+  recipe.update_info params
+  redirect to "/#{ params[:username] }/#{ params[:id] }"
+end
+
 get '/:username/:id' do
-  user = User.find_by username: params[:username]
-  @recipe = user.user_recipes.find params[:id]
+  @recipe = current_user.user_recipes.find params[:id]
   @fermentables = @recipe.fermentable_user_recipes
   @hops = @recipe.hop_user_recipes
   erb :show_user_recipe
