@@ -93,6 +93,22 @@ get '/recipes/:id' do
   erb :show_master_recipe
 end
 
+post '/add/:id' do
+  master_recipe = MasterRecipe.find params[:id]
+  user_recipe = UserRecipe.create(user_id: current_user.id, master_recipe_id: params[:id])
+
+  fermentables = master_recipe.fermentables
+  hops = master_recipe.hops
+  fermentables.each do |fermentable|
+    user_recipe.fermentables << fermentable
+  end
+  hops.each do |hop|
+    user_recipe.hops << hop
+  end
+  
+  redirect to "/#{ current_user.username }/edit/#{ user_recipe.id }"
+end
+
 get '/:username/edit/:id' do
   @recipe = current_user.user_recipes.find params[:id]
   @fermentables = @recipe.fermentable_user_recipes

@@ -37,3 +37,7 @@
   <p>Yeast: <%= @recipe.yeast.name %></p>
   <p>Ferment Temp: <%= @recipe.ferment_temp %>deg</p>
 </div>
+
+<form action="/add/<%= @recipe.id %>" method="post">
+  <button>add to my recipes</button>
+</form>

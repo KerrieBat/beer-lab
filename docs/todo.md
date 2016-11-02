@@ -52,7 +52,7 @@ POST requests:
 * login ("/login")
 * sign up ("/signup")
 * add new recipe ("/recipes/new")
-* TODO: copy master recipe to user recipes ("/username/new")
+* copy master recipe to user recipes ("/add/master_recipe_id")
 
 PATCH requests:
 * update user recipe ("/username/user_recipe_id")
