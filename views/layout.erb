@@ -12,11 +12,12 @@
 <body>
 
   <header>
-    <img src="" alt="logo" class="logo">
+    <a href="/"><img src="" alt="logo" class="logo"></a>
     <h1>brew repo</h1>
     <button class="menu">menu</button>
     <nav>
-      <p class="username"><%= @username %></p>
+      <% if logged_in? %>
+      <p class="username"><%= current_user.username %></p>
       <ul>
         <li><a href="/recipes">Browse</a></li>
         <li><a href="/recipes/new">Add New</a></li>
@@ -27,6 +28,11 @@
           </form>
         </li>
       </ul>
+      <% else %>
+        <p>welcome, guest</p>
+        <p><a href="/signup">Sign Up</a></p>
+        <p><a href="/login">Log In</a></p>
+      <% end %>
     </nav>
   </header>
 

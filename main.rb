@@ -17,19 +17,27 @@ require_relative 'models/hop_user_recipe'
 
 enable :sessions
 
+helpers do
+  def current_user
+    User.find_by id: session[:user_id]
+  end
+
+  def logged_in?
+    !!current_user
+  end
+end
+
 get '/' do
-  if session[:user_id]
-    user = User.find session[:user_id] 
-    @username = user.username
-    @recipes = user.user_recipes
+  if logged_in?
+    @recipes = current_user.user_recipes
     erb :user_home
   else
-    @username = ''
     erb :index
   end
 end
 
 get '/signup' do
+  redirect to '/' if logged_in?
   erb :signup
 end
 
@@ -40,6 +48,7 @@ post '/signup' do
 end
 
 get '/login' do
+  redirect to '/' if logged_in?  
   erb :login
 end
 
@@ -54,7 +63,7 @@ post '/login' do
 end
 
 delete '/login' do
-  session[:user_id] = nil
+  session[:user_id] = nil if logged_in?
   redirect to '/'
 end
 
@@ -69,12 +78,12 @@ end
 
 post '/recipes/new' do
   master_recipe = MasterRecipe.new
-  master_recipe.add_info(params, session[:user_id])
+  master_recipe.add_info(params, current_user.id)
 
   user_recipe = UserRecipe.new
-  user_recipe.add_info(params, session[:user_id], master_recipe.id)
+  user_recipe.add_info(params, current_user.id, master_recipe.id)
 
-  redirect to "/#{ User.find(session[:user_id]).username }/#{ user_recipe.id }"
+  redirect to "/#{ current_user.username }/#{ user_recipe.id }"
 end
 
 get '/recipes/:id' do

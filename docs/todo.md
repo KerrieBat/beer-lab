@@ -62,6 +62,8 @@ DELETE requests:
 * TODO: delete user recipe ("/username/user_recipe_id")
 
 # Further Refinements
+* create helper functions for user id and login check
+* alter menu options depending on user login status
 
-### Styling
-* 
+# Styling
+
