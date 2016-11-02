@@ -34,7 +34,7 @@
 * browse all page
 * master recipe page
 * new recipe page
-* TODO: edit user recipe page
+* edit user recipe page
 
 ### Routing
 GET requests:
@@ -46,7 +46,7 @@ GET requests:
 * browse all page ("/recipes")
 * master recipe page ("/recipes/master_recipe_id")
 * new recipe page ("/recipes/new")
-* TODO: edit user recipe ("/username/edit/user_recipe_id")
+* edit user recipe ("/username/edit/user_recipe_id")
 
 POST requests:
 * login ("/login")

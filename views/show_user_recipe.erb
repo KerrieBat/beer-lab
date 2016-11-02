@@ -38,3 +38,5 @@
   <p>Yeast: <%= @recipe.master_recipe.yeast.name %></p>
   <p>Ferment Temp: <%= @recipe.master_recipe.ferment_temp %>deg</p>
 </div>
+
+<p><a href="/<%= @recipe.user.username %>/edit/<%= @recipe.id %>">Edit</a></p>

@@ -93,6 +93,13 @@ get '/recipes/:id' do
   erb :show_master_recipe
 end
 
+get '/:username/edit/:id' do
+  @recipe = current_user.user_recipes.find params[:id]
+  @fermentables = @recipe.fermentable_user_recipes
+  @hops = @recipe.hop_user_recipes
+  erb :edit_recipe
+end
+
 get '/:username/:id' do
   user = User.find_by username: params[:username]
   @recipe = user.user_recipes.find params[:id]

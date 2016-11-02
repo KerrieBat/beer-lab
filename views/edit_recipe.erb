@@ -1,0 +1,38 @@
+<div class="title">
+  <div class="name">
+    <p><%= @recipe.master_recipe.name %></p>
+    <p><%= @recipe.master_recipe.style.name %></p>
+  </div>
+  <img src="" alt="color">
+</div>
+
+<h2>Edit Recipe Details</h2>
+
+<form action="/<%= @recipe.user.username %>/<%= @recipe.id %>" method="post">
+  <input type="hidden" name"_method" value="patch">
+
+  <label>volume</style><input type="text" name="volume">
+  
+  <div class="fermentables">
+    <h2>fermentables</h2>
+    <% counter = 0 %>
+    <% @fermentables.each do |fermentable| %>
+      <p><%= fermentable.fermentable.name %></p>
+      <p>PPG </p><input type="text" name="ppg<%= counter %>" value="<%= fermentable.ppg %> ">
+      <p>SRM </p><input type="text" name="srm<%= counter %>" value="<%= fermentable.srm %> ">
+      <% counter += 1 %>
+    <% end %>
+  </div>
+
+  <div class="hops">
+    <h2>hops</h2>
+    <% counter = 0 %>
+    <% @hops.each do |hop| %>
+      <p><%= hop.hop.name %></p>
+      <p>AA% </p><input type="text" name="aa<%= counter %>" value="<%= hop.aa %>">
+      <% counter += 1 %>
+    <% end %>
+  </div>
+
+  <button>update</button>
+</form>
