@@ -51,7 +51,7 @@ GET requests:
 POST requests:
 * login ("/login")
 * sign up ("/signup")
-* TODO: add new recipe ("/recipes/new")
+* add new recipe ("/recipes/new")
 * TODO: copy master recipe to user recipes ("/username/new")
 
 PATCH requests:

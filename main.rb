@@ -68,7 +68,9 @@ get '/recipes/new' do
 end
 
 post '/recipes/new' do
-  # binding.pry
+  MasterRecipe.new.add_info(params, session[:user_id])
+  # UserRecipe.new.add_info(params, session[:user_id]).save
+  binding.pry
 end
 
 get '/recipes/:id' do
