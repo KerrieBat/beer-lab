@@ -25,6 +25,15 @@ helpers do
   def logged_in?
     !!current_user
   end
+
+  def get_stats recipe
+    stats = {}
+    stats['og'] = recipe.fermentable_master_recipes.sum('target_ppg').to_f / 1000 + 1
+    stats['fg'] = ((stats['og'] * 1000 - 1000) * (1 - (recipe.yeast.attenuation.to_f / 100)) + 1000) / 1000
+    stats['abv'] = (stats['og'] - stats['fg']) * 131.25
+    stats['ibu'] = recipe.hop_master_recipes.sum('ibu')
+    stats
+  end
 end
 
 get '/' do
@@ -90,10 +99,7 @@ get '/recipes/:id' do
   @recipe = MasterRecipe.find params[:id]
   @fermentables = @recipe.fermentable_master_recipes
   @hops = @recipe.hop_master_recipes
-  @og = @fermentables.sum('target_ppg').to_f / 1000 + 1
-  @fg = ((@og * 1000 - 1000) * (1 - (@recipe.yeast.attenuation.to_f / 100)) + 1000) / 1000
-  @abv = (@og - @fg) * 131.25
-  @ibu = @hops.sum('ibu')
+  @stats = get_stats @recipe
   erb :show_master_recipe
 end
 

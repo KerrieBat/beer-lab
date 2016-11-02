@@ -8,10 +8,10 @@
 
 <div class="stats">
   <h2>stats</h2>
-  <p>ABV: <%= @abv.round(1) %>%</p>
-  <p>IBU: <%= @ibu %></p>
-  <p>OG: <%= @og.round(3) %></p>
-  <p>FG: <%= @fg.round(3) %></p>
+  <p>ABV: <%= @stats['abv'].round(1) %>%</p>
+  <p>IBU: <%= @stats['ibu'] %></p>
+  <p>OG: <%= @stats['og'].round(3) %></p>
+  <p>FG: <%= @stats['fg'].round(3) %></p>
 </div>
 
 <div class="fermentables">
