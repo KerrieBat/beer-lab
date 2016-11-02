@@ -106,6 +106,11 @@ patch '/:username/:id' do
   redirect to "/#{ params[:username] }/#{ params[:id] }"
 end
 
+delete '/:username/:id' do
+  current_user.user_recipes.find(params[:id]).destroy if current_user.username == params[:username]
+  redirect to '/'
+end
+
 get '/:username/:id' do
   @recipe = current_user.user_recipes.find params[:id]
   @fermentables = @recipe.fermentable_user_recipes
