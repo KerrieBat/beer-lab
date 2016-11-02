@@ -1,0 +1,39 @@
+<div class="title">
+  <div class="name">
+    <p><%= @recipe.name %></p>
+    <p><%= @recipe.style.name %></p>
+  </div>
+  <img src="" alt="color">
+</div>
+
+<div class="stats">
+  <h2>stats</h2>
+  <p>ABV</p>
+  <p>IBU</p>
+  <p>OG</p>
+  <p>FG</p>
+</div>
+
+<div class="fermentables">
+  <h2>fermentables</h2>
+  <% @fermentables.each do |fermentable| %>
+    <p><%= fermentable.fermentable.name %></p>
+    <p>weight g/L</p>
+  <% end %>
+</div>
+
+<div class="hops">
+  <h2>hops</h2>
+  <% @hops.each do |hop| %>
+    <p><%= hop.hop.name %></p>
+    <p>weight g/L</p>
+  <% end %>
+</div>
+
+<div class="yeast-mash-info">
+  <h2>Yeast & Mash Info</h2>
+  <p>Mash Temp: <%= @recipe.mash_temp %>deg</p>
+  <p>Mash Time: <%= @recipe.mash_time %>mins</p>
+  <p>Yeast: <%= @recipe.yeast.name %></p>
+  <p>Ferment Temp: <%= @recipe.ferment_temp %>deg</p>
+</div>
