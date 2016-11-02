@@ -68,9 +68,13 @@ get '/recipes/new' do
 end
 
 post '/recipes/new' do
-  MasterRecipe.new.add_info(params, session[:user_id])
-  # UserRecipe.new.add_info(params, session[:user_id]).save
-  binding.pry
+  master_recipe = MasterRecipe.new
+  master_recipe.add_info(params, session[:user_id])
+
+  user_recipe = UserRecipe.new
+  user_recipe.add_info(params, session[:user_id], master_recipe.id)
+
+  redirect to "/#{ User.find(session[:user_id]).username }/#{ user_recipe.id }"
 end
 
 get '/recipes/:id' do
