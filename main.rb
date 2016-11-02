@@ -35,6 +35,13 @@ helpers do
     stats
   end
 
+  def get_srm recipe
+    srm = 0
+    recipe.fermentables.each do |fermentable|
+      srm += fermentable.fermentable_user_recipes.average('srm')
+    end
+  end
+
   def get_fermentable_weight fermentable, recipe, index
     target = recipe.master_recipe.fermentable_master_recipes[index].target_ppg
     diff = target / fermentable.ppg.to_f

@@ -25,4 +25,4 @@ Users can browse all submitted recipes with various filtering options, leave com
 * Deploy.
 
 ## Bugs
-* 
+* Calculations involving index are not always correct as active record objects are not always returned in same order. Need to refactor and use id's. 
