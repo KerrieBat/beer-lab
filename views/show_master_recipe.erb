@@ -3,33 +3,39 @@
     <p><%= @recipe.name %></p>
     <p><%= @recipe.style.name %></p>
   </div>
-  <p>SRM: <%= @recipe.srm %></p>
+  <div class="srm" style="background:<%= get_srm_color(@recipe.srm) %>"></div>
 </div>
 
+<h3>Stats</h3>
 <div class="stats">
-  <h2>stats</h2>
-  <p>ABV: <%= @stats['abv'].round(1) %>%</p>
-  <p>IBU: <%= @stats['ibu'] %></p>
-  <p>OG: <%= @stats['og'].round(3) %></p>
-  <p>FG: <%= @stats['fg'].round(3) %></p>
+  <div class="top-row">
+    <p><%= @stats['abv'].round(1) %>%</p>
+    <p><%= @stats['ibu'] %></p>
+    <p><%= @stats['og'].round(3) %></p>
+    <p><%= @stats['fg'].round(3) %></p>
+  </div>
+  <p>ABV</p>
+  <p>IBU</p>
+  <p>OG</p>
+  <p>FG</p>
 </div>
 
+<h3>Fermentables</h3>
 <div class="fermentables">
-  <h2>fermentables</h2>
   <% @fermentables.each do |fermentable| %>
-    <p><%= fermentable.fermentable.name %></p>
+    <h4><%= fermentable.fermentable.name %></h4>
   <% end %>
 </div>
 
+<h3>Hops</h3>
 <div class="hops">
-  <h2>hops</h2>
   <% @hops.each do |hop| %>
-    <p><%= hop.hop.name %></p>
+    <h4><%= hop.hop.name %></h4>
   <% end %>
 </div>
 
+<h3>Other Info</h3>
 <div class="yeast-mash-info">
-  <h2>Yeast & Mash Info</h2>
   <p>Mash Temp: <%= @recipe.mash_temp %>deg</p>
   <p>Mash Time: <%= @recipe.mash_time %>mins</p>
   <p>Yeast: <%= @recipe.yeast.name %></p>
@@ -37,5 +43,5 @@
 </div>
 
 <form action="/add/<%= @recipe.id %>" method="post">
-  <button>add to my recipes</button>
+  <button class="add-button">Add to my recipes</button>
 </form>

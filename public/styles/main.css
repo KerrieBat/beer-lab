@@ -373,3 +373,21 @@ h4:first-child {
 .buttons form:hover {
   background: rgba(0, 0, 0, 0.5);
 }
+
+.add-button {
+  display: block;
+  background: none;
+  width: 90%;
+  margin: 0 auto 1em auto;
+  border: 1px solid grey;
+  border-top: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #090809;
+  font-size: 1em;
+  padding: .25em;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: rgba(0, 0, 0, 0.5);
+}

@@ -81,8 +81,12 @@ DELETE requests:
 * style recipe cards
 * style user homepage and browse all page
 * style full user recipe
-* TODO: style full master recipe
+* style full master recipe
 * TODO: style login and signup pages
 * TODO: style new recipe page
 * TODO: style edit recipe page
 * TODO: media queries for larger screens
+
+# Bugs
+* TODO: calculations involving index are not always correct as active record objects are not always returned in same order. need to refactor and use id's.
+* TODO: can still scroll when menu is active, and clicking menu while not at top of page results in chopped-off menu display.
