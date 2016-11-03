@@ -89,4 +89,4 @@ DELETE requests:
 
 # Bugs
 * TODO: calculations involving index are not always correct as active record objects are not always returned in same order. need to refactor and use id's.
-* TODO: can still scroll when menu is active, and clicking menu while not at top of page results in chopped-off menu display.
+* can still scroll when menu is active, and clicking menu while not at top of page results in chopped-off menu display.
