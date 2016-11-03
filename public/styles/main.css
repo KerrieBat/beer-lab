@@ -203,21 +203,21 @@ footer a:hover {
   text-align: center;
 }
 
-.name {
+.recipe-card .name {
   width: 80%;
   border-right: 1px solid grey;
 }
 
-.name p {
+.recipe-card .name p {
   height: 50%;
 }
 
-.name p:first-child {
+.recipe-card .name p:first-child {
   border-bottom: 1px solid grey;
   font-weight: bold;
 }
 
-.srm {
+.recipe-card .srm {
   width: 16%;
   height: 0;
   padding-bottom: 16%;
@@ -245,9 +245,13 @@ footer a:hover {
 
 /* User Home + Browse All Styles: */
 
-h2 {
+main > h2 {
   border-top: 1px solid grey;
   border-bottom: 1px solid grey;
   padding: 1em 5%;
   font-size: 1.1em;
 }
+
+/* Show User Recipe Styles: */
+
+
