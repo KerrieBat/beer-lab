@@ -444,6 +444,26 @@ h4:first-child {
   text-align: center;
 }
 
+.edit .fermentables, .edit .hops {
+  margin-bottom: 0;
+}
+
+.fermentable-add, .hop-add {
+  margin-left: 5%;
+  margin-bottom: .5em;
+  border: 1px solid grey;
+  border-top: none;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.fermentable-add:hover, .hop-add:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .edit .yeast-mash-info {
   display: flex;
   flex-flow: row wrap;
@@ -460,6 +480,7 @@ h4:first-child {
   font-size: 1em;
   font-family: 'Work Sans', sans-serif;
   border-radius: .5em;
+  cursor: pointer;
 }
 
 .long {

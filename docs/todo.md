@@ -67,7 +67,8 @@ DELETE requests:
 * brewing math for master recipes
 * brewing math for user recipes
 * math for SRM
-* TODO: user can add extra fermentable and hop inputs to new recipe form
+* user can add extra fermentable and hop inputs to new recipe form
+* TODO: loop through any number of ingredients when adding new recipe
 * TODO: ensure user is logged in when performing CRUD operations
 * TODO: input field validation on login and signup forms
 * TODO: input field validation on new recipe form
@@ -88,5 +89,6 @@ DELETE requests:
 * TODO: media queries for larger screens
 
 # Bugs
-* TODO: calculations involving index are not always correct as active record objects are not always returned in same order. need to refactor and use id's.
+* TODO: calculations involving index are not always correct as active record objects are not always returned in same order, need to refactor and use id's.
+* TODO: when adding a new recipe, quantities displayed in user copy will differ, need to double check calculations.
 * can still scroll when menu is active, and clicking menu while not at top of page results in chopped-off menu display.
