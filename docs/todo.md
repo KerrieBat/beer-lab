@@ -80,7 +80,7 @@ DELETE requests:
 * style index page
 * style recipe cards
 * style user homepage and browse all page
-* TODO: style full user recipe
+* style full user recipe
 * TODO: style full master recipe
 * TODO: style login and signup pages
 * TODO: style new recipe page

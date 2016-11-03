@@ -208,7 +208,7 @@ footer a:hover {
   border-right: 1px solid grey;
 }
 
-.recipe-card .name p {
+.name p {
   height: 50%;
 }
 
@@ -217,7 +217,7 @@ footer a:hover {
   font-weight: bold;
 }
 
-.recipe-card .srm {
+.srm {
   width: 16%;
   height: 0;
   padding-bottom: 16%;
@@ -252,6 +252,124 @@ main > h2 {
   font-size: 1.1em;
 }
 
-/* Show User Recipe Styles: */
+/* Show Full Recipe Styles: */
 
+.title {
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    padding: .1em 5%;
+    font-size: 1.1em;
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 1em;
+}
 
+.title .name {
+  width: 80%;
+}
+
+.title .name p:first-child {
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+}
+
+.stats, .fermentables, .hops, .yeast-mash-info, .buttons {
+  border: 1px solid grey;
+  width: 90%;
+  margin: .2em auto 1em auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+main > h3 {
+  padding-left: 5%;
+}
+
+.stats p {
+  width: 25%;
+  text-align: center;
+  padding: .25em;
+}
+
+.top-row {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid grey;
+  font-size: 1.2em;
+  padding: .5em 0;
+}
+
+h4 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid grey;
+  border-top: 1px solid grey;
+  padding: .5em;
+}
+
+h4:first-child {
+  border-top: none;
+}
+
+.fermentables p {
+  width: 50%;
+  text-align: center;
+  padding: .25em;
+}
+
+.hops p {
+  width: 33.3333333%;
+  text-align: center;
+  padding: .25em;
+}
+
+.yeast-mash-info {
+  display: block;
+  padding: .5em;
+  margin-bottom: 0;
+}
+
+.yeast-mash-info p {
+  padding: .25em 0;
+}
+
+.buttons {
+  margin-top: 0;
+  border-top: none;
+}
+
+.buttons > p, .buttons > form {
+  width: 50%;
+  text-align: center;
+}
+
+.buttons p {
+  border-right: 1px solid grey;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.buttons a {
+  text-decoration: none;
+  color: #090809;
+}
+
+.buttons p:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.buttons button {
+  border: none;
+  background: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #090809;
+  width: 100%;
+  font-size: 1em;
+  outline: none;
+  cursor: pointer;
+}
+
+.buttons form:hover {
+  background: rgba(0, 0, 0, 0.5);
+}

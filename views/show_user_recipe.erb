@@ -3,47 +3,55 @@
     <p><%= @recipe.master_recipe.name %></p>
     <p><%= @recipe.master_recipe.style.name %></p>
   </div>
-  <p>SRM: <%= @recipe.master_recipe.srm %></p>
+  <div class="srm" style="background:<%= get_srm_color(@recipe.master_recipe.srm) %>"></div>
 </div>
 
-<p>Brew Volume: <%= @recipe.volume %>L</p>
-
+<h3>Stats</h3>
 <div class="stats">
-  <h2>stats</h2>
-  <p>ABV: <%= @stats['abv'].round(1) %>%</p>
-  <p>IBU: <%= @stats['ibu'] %></p>
-  <p>OG: <%= @stats['og'].round(3) %></p>
-  <p>FG: <%= @stats['fg'].round(3) %></p>
+  <div class="top-row">
+    <p><%= @stats['abv'].round(1) %>%</p>
+    <p><%= @stats['ibu'] %></p>
+    <p><%= @stats['og'].round(3) %></p>
+    <p><%= @stats['fg'].round(3) %></p>
+  </div>
+  <p>ABV</p>
+  <p>IBU</p>
+  <p>OG</p>
+  <p>FG</p>
 </div>
 
+<h3>Fermentables</h3>
 <div class="fermentables">
-  <h2>fermentables</h2>
   <% @fermentables.each_with_index do |fermentable, index| %>
-    <p><%= fermentable.fermentable.name %></p>
+    <h4><%= fermentable.fermentable.name %></h4>
     <p><%= fermentable.ppg %> PPG</p>
     <p><%= get_fermentable_weight(fermentable, @recipe, index).to_i %> grams</p>
   <% end %>
 </div>
 
+<h3>Hops</h3>
 <div class="hops">
-  <h2>hops</h2>
   <% @hops.each_with_index do |hop, index| %>
-    <p><%= hop.hop.name %></p>
+    <h4><%= hop.hop.name %></h4>
     <p><%= hop.aa %>% AA</p>
+    <p><%= @recipe.master_recipe.master_hops[index].add_time %> mins</p>
     <p><%= get_hop_weight(hop, @recipe, index).to_i %> grams</p>
   <% end %>
 </div>
 
+<h3>Other Info</h3>
 <div class="yeast-mash-info">
-  <h2>Yeast & Mash Info</h2>
+  <p>Batch Size: <%= @recipe.volume %>L</p>
   <p>Mash Temp: <%= @recipe.master_recipe.mash_temp %>deg</p>
   <p>Mash Time: <%= @recipe.master_recipe.mash_time %>mins</p>
   <p>Yeast: <%= @recipe.master_recipe.yeast.name %></p>
   <p>Ferment Temp: <%= @recipe.master_recipe.ferment_temp %>deg</p>
 </div>
 
-<p><a href="/<%= @recipe.user.username %>/edit/<%= @recipe.id %>">Edit</a></p>
-<form action="/<%= @recipe.user.username %>/<%= @recipe.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button>delete</button>
-</form>
+<div class="buttons">
+  <p><a href="/<%= @recipe.user.username %>/edit/<%= @recipe.id %>">Edit</a></p>
+  <form action="/<%= @recipe.user.username %>/<%= @recipe.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Delete</button>
+  </form>
+</div>
