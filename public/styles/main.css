@@ -1,3 +1,131 @@
-body {
-  background: mistyrose;
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Source+Sans+Pro');
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+.page-wrapper {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-flow: row wrap;
+  color: #090809;
+  max-width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Header Styles: */
+
+header {
+  display: flex;
+  flex-flow: row wrap;  
+  width: 100%;
+  background: #FF312E;
+  height: 4em;
+}
+
+.logo {
+  width: 20%;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.25em;
+  width: 60%;
+}
+
+.menu {
+  width: 20%;
+  border: none;
+  background: none;
+  font-size: 1.5em;
+  opacity: .75;
+  outline: none;
+}
+
+/* Menu Styles: */
+
+.menu-wrapper {
+  position: absolute;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, .7);
+}
+
+nav {
+  background: #93A3B1;
+  min-width: 50%;
+  padding: 1em;
+}
+
+.close {
+  font-size: 2em;
+  margin-bottom: 1em;
+  cursor: pointer;
+}
+
+.username {
+  font-size: 1.25em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid black;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: #090809;
+  padding: .75em 0;
+  border-bottom: 1px solid grey;
+}
+
+nav button {
+  border: none;
+  background: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: block;
+  text-decoration: none;
+  color: #090809;
+  padding: .75em 0;
+  border-bottom: 1px solid grey;
+  width: 100%;
+  font-size: 1em;
+  text-align: left;
+  outline: none;
+}
+
+/* Footer Styles: */
+
+footer {
+  display: flex;
+  width: 100%;
+  height: 2em;
+  align-self: flex-end;
+  border-top: 1px solid grey;
+  background: rgba(0, 0, 0, .25)
+}
+
+footer a {
+  width: 50%;
+  text-align: center;
+  line-height: 2em;
+  text-decoration: none;
+  color: #090809;
+}
+
+footer a:first-child {
+  border-right: 1px solid grey;
 }

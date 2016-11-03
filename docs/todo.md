@@ -66,7 +66,7 @@ DELETE requests:
 * alter menu options depending on user login status
 * brewing math for master recipes
 * brewing math for user recipes
-* TODO: math for SRM
+* math for SRM
 * TODO: user can add extra fermentable and hop inputs to new recipe form
 * TODO: ensure user is logged in when performing CRUD operations
 * TODO: input field validation on login and signup forms
@@ -75,7 +75,7 @@ DELETE requests:
 * TODO: autocomplete form fields
 
 # Styling
-* TODO: structure overall layout template
+* structure overall layout template
 * TODO: make menu slide in when selected
 * TODO: style recipe cards
 * TODO: style user homepage and browse all page

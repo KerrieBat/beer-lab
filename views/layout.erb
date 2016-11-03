@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="/styles/main.css">
 
   <title>Brew Repo</title>
@@ -11,30 +12,31 @@
 
 <body>
 
+<div class="page-wrapper">
   <header>
-    <a href="/"><img src="" alt="logo" class="logo"></a>
+    <a href="/" class="logo"><img src="http://i.imgur.com/ZoxAfD7.png" alt="logo"></a>
     <h1>brew repo</h1>
-    <button class="menu">menu</button>
+    <button class="menu">&#9776;</button>
+  </header>
+
+  <div class="menu-wrapper">
     <nav>
+      <p class="close">X</p>
       <% if logged_in? %>
-      <p class="username"><%= current_user.username %></p>
-      <ul>
-        <li><a href="/recipes">Browse</a></li>
-        <li><a href="/recipes/new">Add New</a></li>
-        <li>
-          <form action="/login" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <button>Log Out</button>
-          </form>
-        </li>
-      </ul>
+        <p class="username">Hi, <%= current_user.username %>!</p>
+        <a href="/recipes">Browse</a>
+        <a href="/recipes/new">Add New</a>
+        <form action="/login" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <button>Log Out</button>
+        </form>
       <% else %>
-        <p>welcome, guest</p>
-        <p><a href="/signup">Sign Up</a></p>
-        <p><a href="/login">Log In</a></p>
+        <p class="username">Hi, guest!</p>
+        <a href="/signup">Sign Up</a>
+        <a href="/login">Log In</a>
       <% end %>
     </nav>
-  </header>
+  </div>
 
   <main>
     <%= yield %>
@@ -44,6 +46,7 @@
     <a href="#">about</a>
     <a href="#">help/faq</a>
   </footer>
+</div>
 
   <script src="/scripts/main.js"></script>
 </body>
