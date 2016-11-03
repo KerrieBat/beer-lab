@@ -25,6 +25,32 @@ $closeMenuBtn.click( function() {
 $fermentableAddBtn.click(addFermentableInput);
 $hopAddBtn.click(addHopInput);
 
+// Autcomplete widgets:
+
+var autoStyle = $('.auto-style').first().text().split(',');
+autoStyle.pop()
+$('.style-name').first().autocomplete({
+  source: autoStyle
+});
+
+var autoYeast = $('.auto-yeast').first().text().split(',');
+autoYeast.pop()
+$('.yeast-name').first().autocomplete({
+  source: autoYeast
+});
+
+var autoFermentable = $('.auto-fermentable').first().text().split(',');
+autoFermentable.pop()
+$('.fermentable-name').first().autocomplete({
+  source: autoFermentable
+});
+
+var autoHops = $('.auto-hops').first().text().split(',');
+autoHops.pop()
+$('.hop-name').first().autocomplete({
+  source: autoHops
+});
+
 // Add input field functions:
 
 function addFermentableInput() {
@@ -34,6 +60,9 @@ function addFermentableInput() {
   var $degL = $('<p>°L</p><input type="text" name="lovi' + fCounter + '">');
   var $qty = $('<p>Qty(g)</p><input type="text" name="f_weight' + fCounter + '">');
 
+  $name.autocomplete({
+    source: autoFermentable
+  });
   $div.append($name);
   $div.append($ppg);
   $div.append($degL);
@@ -50,6 +79,9 @@ function addHopInput() {
   var $time = $('<p>Time</p><input type="text" name="time' + hCounter + '">');
   var $qty = $('<p>Qty(g)</p><input type="text" name="h_weight' + hCounter + '">');
 
+  $name.autocomplete({
+    source: autoHops
+  });
   $div.append($name);
   $div.append($aa);
   $div.append($time);

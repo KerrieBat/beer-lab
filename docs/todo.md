@@ -73,7 +73,7 @@ DELETE requests:
 * TODO: input field validation on login and signup forms
 * TODO: input field validation on new recipe form
 * TODO: input validation on edit form
-* TODO: autocomplete form fields
+* autocomplete form fields
 
 # Styling
 * structure overall layout template
@@ -93,3 +93,4 @@ DELETE requests:
 * TODO: calculations involving index are not always correct as active record objects are not always returned in same order, need to refactor and use id's.
 * TODO: when adding a new recipe, quantities displayed in user copy will differ, need to double check calculations.
 * can still scroll when menu is active, and clicking menu while not at top of page results in chopped-off menu display.
+* TODO: viewport widths below 700px can scroll horizontally when content exceeds viewport height (issue only on desktop browser).

@@ -118,6 +118,15 @@ get '/recipes' do
 end
 
 get '/recipes/new' do
+  @auto_style = ''
+  Style.all.each {|v| @auto_style += "#{v.name},"}
+  @auto_yeast = ''
+  Yeast.all.each {|v| @auto_yeast += "#{v.name},"}
+  @auto_fermentable = ''
+  Fermentable.all.each {|v| @auto_fermentable += "#{v.name},"}
+  @auto_hops = ''
+  Hop.all.each {|v| @auto_hops += "#{v.name},"}
+  
   erb :new_recipe
 end
 

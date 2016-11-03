@@ -5,11 +5,11 @@
   <h3>General Info</h3>
   <div class="yeast-mash-info">
     <p>Beer Name</p><input type="text" name="name" class="long">
-    <p>Style</p><input type="text" name="style" class="long">
+    <p>Style</p><input type="text" name="style" class="long style-name">
     <p>Batch Size</p><input type="text" name="volume" value=""><p class="unit">Litres</p>
     <p>Mash Temp</p><input type="text" name="mash_temp"><p class="unit">°C</p>
     <p>Mash Time</p><input type="text" name="mash_time"><p class="unit">mins</p>
-    <p>Yeast Strain</p><input type="text" name="yeast" class="long">
+    <p>Yeast Strain</p><input type="text" name="yeast" class="long yeast-name">
     <p>Yeast Attenuation</p><input type="text" name="attenuation"><p class="unit">%</p>
     <p>Ferment Temp</p><input type="text" name="ferment_temp"><p class="unit">°C</p>
   </div>
@@ -17,7 +17,7 @@
   <h3>Fermentables</h3>
   <div class="fermentables">
     <div class="ingredient-entry">
-      <p>Name</p><input type="text" name="fermentable0">
+      <p>Name</p><input class="fermentable-name" type="text" name="fermentable0">
       <p>PPG</p><input type="text" name="ppg0">
       <p>°L</p><input type="text" name="lovi0">
       <p>Qty(g)</p><input type="text" name="f_weight0">
@@ -28,7 +28,7 @@
   <h3>Hops</h3>
   <div class="hops">
     <div class="ingredient-entry">
-      <p>Name</p><input type="text" name="hop0">
+      <p>Name</p><input class="hop-name" type="text" name="hop0">
       <p>AA%</p><input type="text" name="aa0">
       <p>Time</p><input type="text" name="time0">
       <p>Qty(g)</p><input type="text" name="h_weight0">
@@ -38,3 +38,8 @@
 
   <button>Submit</button>
 </form>
+
+<div class="auto auto-style"><%= @auto_style %></div>
+<div class="auto auto-yeast"><%= @auto_yeast %></div>
+<div class="auto auto-fermentable"><%= @auto_fermentable %></div>
+<div class="auto auto-hops"><%= @auto_hops %></div>

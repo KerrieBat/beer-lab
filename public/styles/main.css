@@ -504,6 +504,12 @@ h4:first-child {
   width: 45%;
 }
 
+/* Hide all autocomplete option lists: */
+
+.auto {
+  display: none;
+}
+
 /* Media Queries: */
 
 @media (min-width: 420px) {
