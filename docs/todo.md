@@ -68,7 +68,7 @@ DELETE requests:
 * brewing math for user recipes
 * math for SRM
 * user can add extra fermentable and hop inputs to new recipe form
-* TODO: loop through any number of ingredients when adding new recipe
+* loop through any number of ingredients when adding new recipe
 * TODO: ensure user is logged in when performing CRUD operations
 * TODO: input field validation on login and signup forms
 * TODO: input field validation on new recipe form
@@ -86,6 +86,7 @@ DELETE requests:
 * style login and signup pages
 * style new recipe page
 * style edit recipe page
+* TODO: overlay colour swatch with beer mug image
 * TODO: media queries for larger screens
 
 # Bugs

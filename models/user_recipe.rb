@@ -11,11 +11,21 @@ class UserRecipe < ActiveRecord::Base
     self.master_recipe_id = master_id
     self.volume = params[:volume]
 
-    # TODO: math and loops here
-    self.fermentables << Fermentable.find_by(name: params[:fermentable1])
-    self.user_fermentables[0].update(ppg: params[:ppg1])
-    self.hops << Hop.find_by(name: params[:hop1])
-    self.user_hops[0].update(aa: params[:aa1])
+    num_of_fermentables = params.keys.select { |key| key.to_s.match(/^fermentable\d+/) }
+    num_of_fermentables = num_of_fermentables.length
+
+    num_of_fermentables.times do |i|
+      self.fermentables << Fermentable.find_by(name: params["fermentable#{i}"])
+      self.user_fermentables[i].update(ppg: params["ppg#{i}"])
+    end
+    
+    num_of_hops = params.keys.select { |key| key.to_s.match(/^hop\d+/) }
+    num_of_hops = num_of_hops.length
+
+    num_of_hops.times do |i|
+      self.hops << Hop.find_by(name: params["hop#{i}"])
+      self.user_hops[i].update(aa: params["aa#{i}"])
+    end
   end
 
   def update_info params
