@@ -26,23 +26,26 @@ header {
   width: 100%;
   background: #FF312E;
   height: 4em;
+  box-shadow: 0 0 1em .1em rgba(0, 0, 0, 0.5);
 }
 
-.logo {
-  width: 20%;
-}
-
-img {
-  width: 100%;
-}
-
-h1 {
+header a {
+  text-decoration: none;
+  color: #090809;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Press Start 2P', cursive;
   font-size: 1.25em;
   width: 60%;
+}
+
+.logo {
+  max-width: 20%;
+}
+
+img {
+  max-height: 100%;
 }
 
 .menu {
@@ -64,6 +67,7 @@ h1 {
   display: flex;
   justify-content: flex-end;
   background: rgba(0, 0, 0, .7);
+  transition: left .3s ease-in-out;
 }
 
 nav {
