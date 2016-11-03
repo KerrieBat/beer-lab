@@ -79,7 +79,7 @@ DELETE requests:
 * make menu slide in when selected
 * style index page
 * style recipe cards
-* TODO: style user homepage and browse all page
+* style user homepage and browse all page
 * TODO: style full user recipe
 * TODO: style full master recipe
 * TODO: style login and signup pages

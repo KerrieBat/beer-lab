@@ -105,6 +105,10 @@ nav a {
   border-bottom: 1px solid grey;
 }
 
+nav a:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 nav button {
   border: none;
   background: none;
@@ -118,6 +122,11 @@ nav button {
   font-size: 1em;
   text-align: left;
   outline: none;
+  cursor: pointer;
+}
+
+nav button:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* Footer Styles: */
@@ -141,6 +150,10 @@ footer a {
 
 footer a:first-child {
   border-right: 1px solid grey;
+}
+
+footer a:hover {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* Index Styles: */
@@ -228,4 +241,13 @@ footer a:first-child {
   border-top: 1px solid grey;
   color: #090809;
   line-height: 1.5;
+}
+
+/* User Home + Browse All Styles: */
+
+h2 {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 1em 5%;
+  font-size: 1.1em;
 }
