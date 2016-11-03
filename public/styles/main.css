@@ -16,6 +16,7 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   position: relative;
+  background: #ECEBE4;
 }
 
 /* Header Styles: */
@@ -27,6 +28,7 @@ header {
   background: #FF312E;
   height: 4em;
   box-shadow: 0 0 1em .1em rgba(0, 0, 0, 0.5);
+  position: fixed;
 }
 
 header a {
@@ -55,6 +57,11 @@ img {
   font-size: 1.5em;
   opacity: .75;
   outline: none;
+  cursor: pointer;
+}
+
+main {
+  margin-top: 5em;
 }
 
 /* Menu Styles: */
@@ -132,4 +139,39 @@ footer a {
 
 footer a:first-child {
   border-right: 1px solid grey;
+}
+
+/* Index Styles: */
+
+.banner {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  margin: 1em 0;
+  padding: 1.25em 1em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.index-options {
+  text-align: center;
+  margin-top: 4em;
+}
+
+.index-options > a:first-child {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #090809;
+  border: 1px solid grey;
+  border-radius: .5em;
+  padding: .5em 2em;
+  background: #93A3B1;
+}
+
+.index-options p:first-of-type {
+  margin-top: 1.6em;
+}
+
+.index-options p:last-of-type {
+  margin-top: 2.5em;
+  font-size: .9em;
 }
