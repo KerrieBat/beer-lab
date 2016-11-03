@@ -87,7 +87,7 @@ DELETE requests:
 * style new recipe page
 * style edit recipe page
 * overlay colour swatch with beer mug image
-* TODO: media queries for larger screens
+* media queries for larger screens
 
 # Bugs
 * TODO: calculations involving index are not always correct as active record objects are not always returned in same order, need to refactor and use id's.
