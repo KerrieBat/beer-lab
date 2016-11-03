@@ -35,11 +35,20 @@ helpers do
     stats
   end
 
-  def get_srm recipe
-    srm = 0
-    recipe.fermentables.each do |fermentable|
-      srm += fermentable.user_fermentables.average('srm')
-    end
+  def get_srm_color srm
+    return '#F8F753' if srm <= 2
+    return '#F6F513' if srm <= 3
+    return '#ECE61A' if srm <= 4
+    return '#D5BC26' if srm <= 6
+    return '#BF923B' if srm <= 8
+    return '#BF813A' if srm <= 10
+    return '#BC6733' if srm <= 13
+    return '#8D4C32' if srm <= 17
+    return '#5D341A' if srm <= 20
+    return '#261716' if srm <= 24
+    return '#0F0B0A' if srm <= 29
+    return '#080707' if srm <= 35
+    '#030403'
   end
 
   def get_fermentable_weight fermentable, recipe, index

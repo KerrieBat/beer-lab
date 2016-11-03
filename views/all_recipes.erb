@@ -7,7 +7,7 @@
       <p><%= recipe.name %></p>
       <p><%= recipe.style.name %></p>
     </div>
-    <p>SRM: <%= recipe.srm %></p>
+    <div class="srm" style="background:<%= get_srm_color(recipe.srm) %>"></div>
     <p>ABV: <%= stats['abv'].round(1) %>%</p>
     <p>IBU <%= stats['ibu'] %></p>
     <a href="/recipes/<%= recipe.id %>">More...</a>

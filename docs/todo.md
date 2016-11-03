@@ -78,7 +78,7 @@ DELETE requests:
 * structure overall layout template
 * make menu slide in when selected
 * style index page
-* TODO: style recipe cards
+* style recipe cards
 * TODO: style user homepage and browse all page
 * TODO: style full user recipe
 * TODO: style full master recipe

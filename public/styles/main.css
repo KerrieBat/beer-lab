@@ -19,6 +19,11 @@ html, body {
   background: #ECEBE4;
 }
 
+main {
+  margin-top: 5em;
+  width: 100%;
+}
+
 /* Header Styles: */
 
 header {
@@ -48,6 +53,7 @@ header a {
 
 img {
   max-height: 100%;
+  max-width: 4em;
 }
 
 .menu {
@@ -58,10 +64,6 @@ img {
   opacity: .75;
   outline: none;
   cursor: pointer;
-}
-
-main {
-  margin-top: 5em;
 }
 
 /* Menu Styles: */
@@ -132,7 +134,7 @@ footer {
 footer a {
   width: 50%;
   text-align: center;
-  line-height: 2em;
+  line-height: 2;
   text-decoration: none;
   color: #090809;
 }
@@ -150,6 +152,7 @@ footer a:first-child {
   padding: 1.25em 1em;
   text-align: center;
   font-size: 1.5em;
+  width: 100%;
 }
 
 .index-options {
@@ -174,4 +177,55 @@ footer a:first-child {
 .index-options p:last-of-type {
   margin-top: 2.5em;
   font-size: .9em;
+}
+
+/* Recipe Card Styles: */
+
+.recipe-card {
+  border: 1px solid grey;
+  width: 90%;
+  margin: 1em auto;
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+.name {
+  width: 80%;
+  border-right: 1px solid grey;
+}
+
+.name p {
+  height: 50%;
+}
+
+.name p:first-child {
+  border-bottom: 1px solid grey;
+  font-weight: bold;
+}
+
+.srm {
+  width: 16%;
+  height: 0;
+  padding-bottom: 16%;
+  border-radius: 100%;
+  margin: 2%;
+}
+
+.recipe-card p {
+  padding: .3em;
+}
+
+.recipe-card > p {
+  border-top: 1px solid grey;
+  border-right: 1px solid grey;
+  width: 33.3333333%;
+}
+
+.recipe-card a {
+  display: block;
+  width: 33.333333%;
+  border-top: 1px solid grey;
+  color: #090809;
+  line-height: 1.5;
 }
