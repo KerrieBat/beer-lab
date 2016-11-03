@@ -2,7 +2,7 @@ require 'active_record'
 
 options = {
   adapter: 'postgresql',
-  database: 'brewrepo'
+  database: 'beerlab'
 }
 
 ActiveRecord::Base.establish_connection options

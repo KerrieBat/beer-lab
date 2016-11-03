@@ -1,4 +1,4 @@
-CREATE DATABASE brewrepo;
+CREATE DATABASE beerlab;
 
 # MAIN TABLES:
 
@@ -82,7 +82,7 @@ CREATE TABLE master_fermentables (
 # EXAMPLE DATA:
 
 INSERT INTO master_recipes (name, srm, mash_temp, mash_time, ferment_temp, style_id, user_id, yeast_id)
-VALUES ('Example Pale Ale', 9, 67, 60, 19, 1, 1, 1), ('Example IPA', 21, 64, 60, 17, 2, 1, 2);
+VALUES ('Example Pale Ale', 4, 67, 60, 19, 1, 1, 1), ('Example IPA', 16, 64, 60, 17, 2, 1, 2);
 
 INSERT INTO user_recipes (volume, user_id, master_recipe_id)
 VALUES (21, 1, 1), (30, 1, 2);
