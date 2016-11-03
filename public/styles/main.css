@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Work+Sans');
 * {
   box-sizing: border-box;
 }
@@ -8,15 +8,15 @@ html, body {
   height: 100%;
 }
 .page-wrapper {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   display: flex;
   flex-flow: row wrap;
-  color: #090809;
+  color: #2E2C2F;
   max-width: 100%;
   height: 100%;
   overflow-x: hidden;
   position: relative;
-  background: #ECEBE4;
+  background: #F2F5F0;
 }
 
 main {
@@ -30,7 +30,7 @@ header {
   display: flex;
   flex-flow: row wrap;  
   width: 100%;
-  background: #FF312E;
+  background: #475B63;
   height: 4em;
   box-shadow: 0 0 1em .1em rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -38,7 +38,7 @@ header {
 
 header a {
   text-decoration: none;
-  color: #090809;
+  color: #F2F5F0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,6 +59,7 @@ img {
 .menu {
   width: 20%;
   border: none;
+  color: #F2F5F0;
   background: none;
   font-size: 1.5em;
   opacity: .75;
@@ -76,11 +77,11 @@ img {
   display: flex;
   justify-content: flex-end;
   background: rgba(0, 0, 0, .7);
-  transition: left .3s ease-in-out;
+  transition: left .2s ease-in-out;
 }
 
 nav {
-  background: #93A3B1;
+  background: #A5BFA9;
   min-width: 50%;
   padding: 1em;
 }
@@ -100,7 +101,7 @@ nav {
 nav a {
   display: block;
   text-decoration: none;
-  color: #090809;
+  color: #2E2C2F;
   padding: .75em 0;
   border-bottom: 1px solid grey;
 }
@@ -112,10 +113,10 @@ nav a:hover {
 nav button {
   border: none;
   background: none;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   display: block;
   text-decoration: none;
-  color: #090809;
+  color: #2E2C2F;
   padding: .75em 0;
   border-bottom: 1px solid grey;
   width: 100%;
@@ -137,7 +138,7 @@ footer {
   height: 2em;
   align-self: flex-end;
   border-top: 1px solid grey;
-  background: rgba(0, 0, 0, .25)
+  background: #475B63
 }
 
 footer a {
@@ -145,7 +146,7 @@ footer a {
   text-align: center;
   line-height: 2;
   text-decoration: none;
-  color: #090809;
+  color: #F2F5F0;
 }
 
 footer a:first-child {
@@ -174,13 +175,13 @@ footer a:hover {
 }
 
 .index-options > a:first-child {
-  font-size: 1.2em;
   text-decoration: none;
-  color: #090809;
+  color: #F2F5F0;
+  font-family: 'Press Start 2P', cursive;
   border: 1px solid grey;
   border-radius: .5em;
-  padding: .5em 2em;
-  background: #93A3B1;
+  padding: 1em 2em;
+  background: #3F5542;
 }
 
 .index-options p:first-of-type {
@@ -239,7 +240,7 @@ footer a:hover {
   display: block;
   width: 33.333333%;
   border-top: 1px solid grey;
-  color: #090809;
+  color: #2E2C2F;
   line-height: 1.5;
 }
 
@@ -349,11 +350,13 @@ h4:first-child {
   border-right: 1px solid grey;
   cursor: pointer;
   line-height: 1.5;
+  background: #A5BFA9;
 }
 
 .buttons a {
   text-decoration: none;
-  color: #090809;
+  color: #2E2C2F;
+  width: 100%;
 }
 
 .buttons p:hover {
@@ -363,12 +366,16 @@ h4:first-child {
 .buttons button {
   border: none;
   background: none;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #090809;
+  font-family: 'Work Sans', sans-serif;
+  color: #2E2C2F;
   width: 100%;
   font-size: 1em;
   outline: none;
   cursor: pointer;
+}
+
+.buttons form {
+  background: #A5BFA9;
 }
 
 .buttons form:hover {
@@ -382,8 +389,9 @@ h4:first-child {
   margin: 0 auto 1em auto;
   border: 1px solid grey;
   border-top: none;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: #090809;
+  font-family: 'Work Sans', sans-serif;
+  color: #2E2C2F;
+  background: #A5BFA9;
   font-size: 1em;
   padding: .25em;
   cursor: pointer;
@@ -397,7 +405,7 @@ h4:first-child {
 .user-details {
   width: 90%;
   margin: 3em auto;
-  background: #93A3B1;
+  background: #3F5542;
   border-radius: 1em;
   display: flex;
   flex-direction: column;
@@ -412,11 +420,11 @@ h4:first-child {
 .user-details button {
   border: none;
   margin: 1em 0;
-  background: #090809;
-  color: #ECEBE4;
+  background: #2E2C2F;
+  color: #F2F5F0;
   padding: .5em 2em;
-  font-size: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-size: .8em;
+  font-family: 'Press Start 2P', cursive;
   border-radius: .5em;
 }
 
@@ -446,11 +454,11 @@ h4:first-child {
   display: block;
   border: none;
   margin: 1em auto;
-  background: #93A3B1;
-  color: #090809;
+  background: #3F5542;
+  color: #F2F5F0;
   padding: .5em 2em;
   font-size: 1em;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   border-radius: .5em;
 }
 
