@@ -250,6 +250,7 @@ main > h2 {
   border-bottom: 1px solid grey;
   padding: 1em 5%;
   font-size: 1.1em;
+  margin-bottom: 1em;
 }
 
 /* Show Full Recipe Styles: */
@@ -282,7 +283,7 @@ main > h2 {
   flex-flow: row wrap;
 }
 
-main > h3 {
+h3 {
   padding-left: 5%;
 }
 
@@ -413,6 +414,39 @@ h4:first-child {
   margin: 1em 0;
   background: #090809;
   color: #ECEBE4;
+  padding: .5em 2em;
+  font-size: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: .5em;
+}
+
+/* New + Edit Form Styles: */
+
+.edit p {
+  width: 50%;
+  text-align: center;
+}
+.edit .unit {
+  width: 25%;
+}
+
+.edit input {
+  width: 15%;
+  margin: .25em 0;
+  text-align: center;
+}
+
+.edit .yeast-mash-info {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.edit button {
+  display: block;
+  border: none;
+  margin: 1em auto;
+  background: #93A3B1;
+  color: #090809;
   padding: .5em 2em;
   font-size: 1em;
   font-family: 'Source Sans Pro', sans-serif;

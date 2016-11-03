@@ -82,9 +82,9 @@ DELETE requests:
 * style user homepage and browse all page
 * style full user recipe
 * style full master recipe
-* TODO: style login and signup pages
+* style login and signup pages
 * TODO: style new recipe page
-* TODO: style edit recipe page
+* style edit recipe page
 * TODO: media queries for larger screens
 
 # Bugs

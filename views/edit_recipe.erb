@@ -3,35 +3,42 @@
     <p><%= @recipe.master_recipe.name %></p>
     <p><%= @recipe.master_recipe.style.name %></p>
   </div>
-  <p>SRM: <%= @recipe.master_recipe.srm %></p>
+  <div class="srm" style="background:<%= get_srm_color(@recipe.master_recipe.srm) %>"></div>
 </div>
 
 <h2>Edit Recipe Details</h2>
 
-<form action="/<%= @recipe.user.username %>/<%= @recipe.id %>" method="post">
+<form action="/<%= @recipe.user.username %>/<%= @recipe.id %>" method="post" class="edit">
   <input type="hidden" name="_method" value="patch">
 
-  <label>volume</label><input type="text" name="volume" value="<%= @recipe.volume %>">
-  
+  <h3>Fermentables</h3>
   <div class="fermentables">
-    <h2>fermentables</h2>
     <% counter = 0 %>
     <% @fermentables.each do |fermentable| %>
       <p><%= fermentable.fermentable.name %></p>
-      <p>PPG </p><input type="text" name="ppg<%= counter %>" value="<%= fermentable.ppg %> ">
+      <input type="text" name="ppg<%= counter %>" value="<%= fermentable.ppg %>">
+      <p class="unit">PPG</p>
       <% counter += 1 %>
     <% end %>
   </div>
 
+  <h3>Hops</h3>
   <div class="hops">
-    <h2>hops</h2>
     <% counter = 0 %>
     <% @hops.each do |hop| %>
       <p><%= hop.hop.name %></p>
-      <p>AA% </p><input type="text" name="aa<%= counter %>" value="<%= hop.aa %>">
+      <input type="text" name="aa<%= counter %>" value="<%= hop.aa %>">
+      <p class="unit">AA%</p>
       <% counter += 1 %>
     <% end %>
   </div>
 
-  <button>update</button>
+  <h3>Other Info</h3>
+  <div class="yeast-mash-info">
+    <p>Batch Size</p>
+    <input type="text" name="volume" value="<%= @recipe.volume %>">
+    <p class="unit">Litres</p>
+  </div>
+  
+  <button>Save Changes</button>
 </form>
