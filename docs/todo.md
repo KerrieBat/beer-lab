@@ -86,7 +86,7 @@ DELETE requests:
 * style login and signup pages
 * style new recipe page
 * style edit recipe page
-* TODO: overlay colour swatch with beer mug image
+* overlay colour swatch with beer mug image
 * TODO: media queries for larger screens
 
 # Bugs
