@@ -391,3 +391,30 @@ h4:first-child {
 .add-button:hover {
   background: rgba(0, 0, 0, 0.5);
 }
+
+/* Signup + Login Page Styles: */
+.user-details {
+  width: 90%;
+  margin: 3em auto;
+  background: #93A3B1;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-details input {
+  width: 50%;
+  margin-top: 2em;
+}
+
+.user-details button {
+  border: none;
+  margin: 1em 0;
+  background: #090809;
+  color: #ECEBE4;
+  padding: .5em 2em;
+  font-size: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  border-radius: .5em;
+}
