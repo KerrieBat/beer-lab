@@ -1,28 +1,38 @@
 <h2>New Recipe</h2>
 
-<form action="/recipes/new" method="post">
-  <label>name</label><input type="text" name="name">
-  <label>style</style><input type="text" name="style">
-  <label>volume</style><input type="text" name="volume">
-  
-  <p>fermentables</p>
-  <label>name</label><input type="text" name="fermentable1">
-  <label>PPG</label><input type="text" name="ppg1">
-  <label>deg Lovibond</label><input type="text" name="lovi1">
-  <label>Weight</label><input type="text" name="f_weight1">
+<form action="/recipes/new" method="post" class="edit">
 
-  <p>hops</p>
-  <label>name</label><input type="text" name="hop1">
-  <label>AA%</label><input type="text" name="aa1">
-  <label>time</label><input type="text" name="time1">
-  <label>Weight</label><input type="text" name="h_weight1">
+  <h3>General Info</h3>
+  <div class="yeast-mash-info">
+    <p>Beer Name</p><input type="text" name="name" class="long">
+    <p>Style</p><input type="text" name="style" class="long">
+    <p>Batch Size</p><input type="text" name="volume" value=""><p class="unit">Litres</p>
+    <p>Mash Temp</p><input type="text" name="mash_temp"><p class="unit">°C</p>
+    <p>Mash Time</p><input type="text" name="mash_time"><p class="unit">mins</p>
+    <p>Yeast Strain</p><input type="text" name="yeast" class="long">
+    <p>Yeast Attenuation</p><input type="text" name="attenuation"><p class="unit">%</p>
+    <p>Ferment Temp</p><input type="text" name="ferment_temp"><p class="unit">°C</p>
+  </div>
 
-  <p>mash & yeast</p>
-  <label>Mash temp</label><input type="text" name="mash_temp">
-  <label>mash time</label><input type="text" name="mash_time">
-  <label>yeast</label><input type="text" name="yeast">
-  <label>attenuation</label><input type="text" name="attenuation">
-  <label>ferment temp</label><input type="text" name="ferment_temp">
+  <h3>Fermentables</h3>
+  <div class="fermentables">
+    <div class="ingredient-entry">
+      <p>Name</p><input type="text" name="fermentable1">
+      <p>PPG</p><input type="text" name="ppg1">
+      <p>°L</p><input type="text" name="lovi1">
+      <p>Qty(g)</p><input type="text" name="f_weight1">
+    </div>
+  </div>
 
-  <button>submit</button>
+  <h3>Hops</h3>
+  <div class="hops">
+    <div class="ingredient-entry">
+      <p>Name</p><input type="text" name="hop1">
+      <p>AA%</p><input type="text" name="aa1">
+      <p>Time</p><input type="text" name="time1">
+      <p>Qty(g)</p><input type="text" name="h_weight1">
+    </div>
+  </div>
+
+  <button>Submit</button>
 </form>

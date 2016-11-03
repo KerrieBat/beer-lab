@@ -439,6 +439,7 @@ h4:first-child {
 .edit .yeast-mash-info {
   display: flex;
   flex-flow: row wrap;
+  margin-bottom: 1em;
 }
 
 .edit button {
@@ -451,4 +452,22 @@ h4:first-child {
   font-size: 1em;
   font-family: 'Source Sans Pro', sans-serif;
   border-radius: .5em;
+}
+
+.long {
+  width: 50% !important;
+}
+
+.ingredient-entry {
+  display: flex;
+  flex-flow: row wrap;
+  width: 95%;
+}
+
+.ingredient-entry p, .ingredient-entry input {
+  width: 16.66666666%;
+}
+
+.ingredient-entry p:first-child, .ingredient-entry input:first-of-type {
+  width: 45%;
 }
