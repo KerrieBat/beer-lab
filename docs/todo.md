@@ -93,4 +93,4 @@ DELETE requests:
 * TODO: calculations involving index are not always correct as active record objects are not always returned in same order, need to refactor and use id's.
 * TODO: when adding a new recipe, quantities displayed in user copy will differ, need to double check calculations.
 * can still scroll when menu is active, and clicking menu while not at top of page results in chopped-off menu display.
-* TODO: viewport widths below 700px can scroll horizontally when content exceeds viewport height (issue only on desktop browser).
+* TODO: viewport widths below 700px can scroll horizontally when content exceeds viewport height (issue only on desktop browser, when scrolling sideways with touchpad).

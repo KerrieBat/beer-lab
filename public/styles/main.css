@@ -545,6 +545,10 @@ h4:first-child {
 }
 
 @media (min-width: 700px) {
+  .user-details {
+    width: 75%;
+  }
+
   .menu {
     display: none;
   }
@@ -597,6 +601,10 @@ h4:first-child {
 }
 
 @media (min-width: 800px) {
+  .user-details {
+    width: 60%;
+  }
+  
   main {
     width: 800px;
     margin: 5em auto 0 auto;
@@ -609,5 +617,9 @@ h4:first-child {
 
   .srm {
     height: 80px;
+  }
+
+  header a {
+    width: 90%;
   }
 }
