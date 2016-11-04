@@ -35,6 +35,7 @@
 * master recipe page
 * new recipe page
 * edit user recipe page
+* help & about pages
 
 ### Routing
 GET requests:
@@ -47,6 +48,7 @@ GET requests:
 * master recipe page ("/recipes/master_recipe_id")
 * new recipe page ("/recipes/new")
 * edit user recipe ("/username/edit/user_recipe_id")
+* help & about pages
 
 POST requests:
 * login ("/login")

@@ -112,6 +112,14 @@ delete '/login' do
   redirect to '/'
 end
 
+get '/help' do
+  erb :help
+end
+
+get '/about' do
+  erb :about
+end
+
 get '/recipes' do
   @recipes = MasterRecipe.all
   erb :all_recipes
