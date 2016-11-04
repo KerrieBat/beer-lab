@@ -1,4 +1,4 @@
-## Beer Lab
+## [Beer Lab](https://beer-lab.herokuapp.com)
 #### A repository for storing, sharing, and discovering great homebrew recipes.
 ---
 

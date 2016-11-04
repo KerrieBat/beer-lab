@@ -94,3 +94,4 @@ DELETE requests:
 * TODO: when adding a new recipe, quantities displayed in user copy will differ, need to double check calculations.
 * can still scroll when menu is active, and clicking menu while not at top of page results in chopped-off menu display.
 * TODO: viewport widths below 700px can scroll horizontally when content exceeds viewport height (issue only on desktop browser, when scrolling sideways with touchpad).
+* TODO: user is ocassionally logged out for no reason, unable to reproduce reliably.
